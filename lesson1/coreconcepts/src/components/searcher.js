@@ -5,8 +5,8 @@ import GenericButton from "./genericButton"
 export default class Searcher extends React.Component{     
     
     state = {
-        searchQuery: this.props.searchQuery,
-        onSearch: this.props.onSearch
+        searchQuery: this.props.searchQuery ?? "",
+        onSearch: this.props.onSearch ?? null
     }
 
     handleSearch() {

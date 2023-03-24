@@ -4,7 +4,7 @@ import GenericButton from "./genericButton"
 
 export default class Counter extends React.Component{    
     state = {
-        number: this.props.number
+        number: this.props.number ?? 0
       }
 
     sum = () => {
@@ -27,7 +27,10 @@ export default class Counter extends React.Component{
 
         const displayDiv = React.createElement(
             'span',
-            {className: 'counter-title'},
+            {   
+                title: 'number-to-display',
+                className: 'counter-title'
+            },
             `${this.state.number}`
         )
 
