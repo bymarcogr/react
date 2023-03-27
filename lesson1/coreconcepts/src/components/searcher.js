@@ -1,64 +1,44 @@
-import React  from "react"
+import React, { useState }  from "react"
 import '../styles/global.css'
 import GenericButton from "./genericButton"
 
-export default class Searcher extends React.Component{     
+export default function Searcher (props) {     
     
-    state = {
-        searchQuery: this.props.searchQuery,
-        onSearch: this.props.onSearch
-    }
+    const [searchQuery, setSearchQuery] = useState(props.searchQuery);
 
-    handleSearch() {
-      this.state.onSearch(this.state.searchQuery);
-    }
-
-    handleKeyDown = (event) => {
+   const handleKeyDown = (event) => {
         if (event.key === "Enter") {
-            this.updateSearchQuery(event.target.value)
-            this.handleSearch();
+            setSearchQuery(event.target.value)
+            props.onSearch(searchQuery)
         }
     };
 
-    handleChange = (event) => {
-        this.updateSearchQuery(event.target.value);
-      };
+    const searchButton = React.createElement(GenericButton, {title: "Search", onClick: () => props.onSearch(searchQuery), className:"netflixSearch"}, null);
+    
+    const searchTextBar = React.createElement(
+        'input',
+        {            
+            type:'text',
+            placeholder: 'What do you want to watch?',
+            value:  searchQuery,
+            onKeyDown: (e) => handleKeyDown(e),
+            onChange: (e) =>  setSearchQuery(e.target.value),
+            className:'search'
+        }
+    )
 
-    updateSearchQuery = (value) => {
-        this.setState({ 
-            searchQuery:value 
-         });
-    }
+    const br = React.createElement(
+        'br',
+       null,
+       null
+    )
 
-    render(){ 
-        this.handleSearch = this.handleSearch.bind(this);
-        
-        const searchButton = React.createElement(GenericButton, {title: "Search", onClick:this.handleSearch, className:"netflixSearch"}, null);
-        
-        const searchTextBar = React.createElement(
-            'input',
-            {            
-                type:'text',
-                placeholder: 'What do you want to watch?',
-                value:  this.state.searchQuery,
-                onKeyDown: this.handleKeyDown,
-                onChange: this.handleChange,
-                className:'search'
-            }
-        )
-
-        const br = React.createElement(
-            'br',
-           null,
-           null
-        )
-
-        const h1 = React.createElement(
-            'h1',
-           {className:"title"},
-           'Search Component'
-        )
-
-        return React.createElement('span', null ,h1, br , searchTextBar ,searchButton);
-    }
+    const h1 = React.createElement(
+        'h1',
+       {className:"title"},
+       'Search Component'
+    )
+    
+    
+    return React.createElement('span', null ,h1, br , searchTextBar ,searchButton);
 }

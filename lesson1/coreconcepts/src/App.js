@@ -4,34 +4,32 @@ import GenreSelector from './components/genreSelector'
 
 import React  from "react"
 
-export default class App extends React.Component {
+export default function App () {
 
-onSearchCallback = (searchString) => {
+const onSearchCallback = (searchString) => {
     alert(searchString);
 }
 
-onSelectedCallback = (genreSelected) => {
+const onSelectedCallback = (genreSelected) => {
   alert(genreSelected);
 }
 
-  render() {
+const counterElement = React.createElement(Counter, {number: 1}, null);
 
-    const counterElement = React.createElement(Counter, {number: 1}, null);
+const searchElement = React.createElement(Searcher, {searchQuery: "Search String?", onSearch: (e) => onSearchCallback(e)},null);
 
-    const searchElement = React.createElement(Searcher, {searchQuery: "Search String?", onSearch: this.onSearchCallback},null);
+const inputData = ['Action',
+'Comedy',
+'Drama',
+'Fantasy',
+'Horror',
+'Mystery',
+'Romance',
+'Thriller',
+'Western']    
 
-    const inputData = ['Action',
-    'Comedy',
-    'Drama',
-    'Fantasy',
-    'Horror',
-    'Mystery',
-    'Romance',
-    'Thriller',
-    'Western']    
-   
-    const genreListElement = React.createElement(GenreSelector,{genreList: inputData, selectedGenre:"Fantasy", onSelect: this.onSelectedCallback});
+const genreListElement = React.createElement(GenreSelector,{genreList: inputData, selectedGenre:"Fantasy", onSelect: (e) => onSelectedCallback(e)});
 
-    return React.createElement('div', null ,counterElement,searchElement,genreListElement);
-  }
+return React.createElement('div', null ,counterElement,searchElement,genreListElement);
+  
 }
