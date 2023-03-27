@@ -1,6 +1,7 @@
 import React, { useState }  from "react"
 import GenericButton from "./genericButton";
 import '../styles/global.css'
+import {brElement, h1Element} from '../functions/generalElements'
 
 export default function GenreSelector (props) {
 
@@ -14,18 +15,6 @@ export default function GenreSelector (props) {
                                 onClick: (e)=> {setSelectedGenre(e.target.innerText); props.onSelect(selectedGenre); }  
                             });
                             }) ;
-
-    const br = React.createElement(
-    'br',
-    null,
-    null
-    )
-
-    const h1 = React.createElement(
-        'h1',
-       {className:"title"},
-       'Genre List Component'
-    )
     
-    return React.createElement('span', null ,h1, br , genreListElement);
+    return React.createElement('span', null ,h1Element('Genre List Component'), brElement() , genreListElement);
 }

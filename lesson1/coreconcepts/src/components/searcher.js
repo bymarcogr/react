@@ -1,6 +1,7 @@
 import React, { useState }  from "react"
 import '../styles/global.css'
 import GenericButton from "./genericButton"
+import {brElement, h1Element} from '../functions/generalElements'
 
 export default function Searcher (props) {     
     
@@ -26,19 +27,6 @@ export default function Searcher (props) {
             className:'search'
         }
     )
-
-    const br = React.createElement(
-        'br',
-       null,
-       null
-    )
-
-    const h1 = React.createElement(
-        'h1',
-       {className:"title"},
-       'Search Component'
-    )
     
-    
-    return React.createElement('span', null ,h1, br , searchTextBar ,searchButton);
+    return React.createElement('span', null ,h1Element('Search Component'), brElement() , searchTextBar ,searchButton);
 }

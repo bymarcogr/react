@@ -1,6 +1,7 @@
 import React, { useState }  from "react"
 import '../styles/global.css'
 import GenericButton from "./genericButton"
+import {brElement, h1Element} from '../functions/generalElements'
 
 export default function Counter (props) {   
     
@@ -15,18 +16,6 @@ export default function Counter (props) {
         {className: 'counter-title'},
         `${number}`
     )
-
-    const br = React.createElement(
-        'br',
-       null,
-       null
-    )
-
-    const h1 = React.createElement(
-        'h1',
-       {className:"title"},
-       'Counter Component'
-    )   
-    
-    return React.createElement('span', null ,h1 , displayDiv , br, buttonSustract, buttonAdd);
+        
+    return React.createElement('span', null ,h1Element('Counter Component') , displayDiv , brElement(), buttonSustract, buttonAdd);
 }
