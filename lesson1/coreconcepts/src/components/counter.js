@@ -17,7 +17,7 @@ export default function Counter (props) {
                 title: 'number-to-display',
                 className: 'counter-title'
             },
-            `${this.state.number}`
+            `${number}`
         )
 
 
