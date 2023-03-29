@@ -20,6 +20,5 @@ export default function Counter (props) {
             `${number}`
         )
 
-
         return React.createElement('span', null ,h1Element('Counter Component') , displayDiv , brElement(), buttonSustract, buttonAdd);
     }
