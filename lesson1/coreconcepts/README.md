@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Stack references
+
+- [Jest](https://jestjs.io/docs/getting-started)
+
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
+- [Web Driver IO](https://webdriver.io/docs/gettingstarted)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -44,7 +54,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 To run web driver io end to end tests located in /tests/integration-tests/specs/, it is declares in wdio.conf.js specs property.
 Screenshots saved in ./tests/integration-tests/screenshots
 
-Builds the app for production to the `build` folder.\
+**Note: Before run e2e tests, execute npm start in a separate console, it will run the react app before tests begin**
 
 ## Learn More
 
@@ -75,13 +85,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-### Stack references
-
-[Jest](https://jestjs.io/docs/getting-started)
-
-[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-
-[Web Driver IO](https://webdriver.io/docs/gettingstarted)
 
