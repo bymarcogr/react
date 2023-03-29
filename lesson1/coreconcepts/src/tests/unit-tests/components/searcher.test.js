@@ -1,6 +1,6 @@
 import {render, screen, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Searcher from '../../components/searcher'
+import Searcher from '../../../components/searcher'
 
 describe("Searcher", () => {
     const searchCriteria = 'Search This';

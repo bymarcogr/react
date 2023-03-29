@@ -1,6 +1,6 @@
 import {render, screen, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Counter from '../../components/counter'
+import Counter from '../../../components/counter'
 
 describe("Counter", () => {
     test('When prop number is defined, Should display same number', ()=>{

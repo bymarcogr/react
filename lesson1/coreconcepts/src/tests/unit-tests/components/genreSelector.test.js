@@ -1,6 +1,6 @@
 import {render, screen, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom'
-import GenreSelector from '../../components/genreSelector'
+import GenreSelector from '../../../components/genreSelector'
 
 describe("GenreSelector", () => {
 
