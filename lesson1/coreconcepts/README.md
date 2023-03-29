@@ -39,9 +39,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### `npm run e2e-test`
+### `npm run test-e2e`
 
-To run web driver io end to end tests located in test\
+To run web driver io end to end tests located in /tests/integration-tests/specs/, it is declares in wdio.conf.js specs property.
+Screenshots saved in ./tests/integration-tests/screenshots
 
 Builds the app for production to the `build` folder.\
 

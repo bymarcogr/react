@@ -98,7 +98,7 @@ exports.config = {
     // gets prepended directly.
     baseUrl: 'http://localhost:3000/',
     coloredLogs: true,
-    screenshotPath: './tests/e2e/screenshots',
+    screenshotPath: './src/tests/integration-tests/screenshots',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
