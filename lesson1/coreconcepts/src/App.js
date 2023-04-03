@@ -6,17 +6,13 @@ import React  from "react"
 
 export default function App () {
 
-const onSearchCallback = (searchString) => {
+const handleOnSearch = (searchString) => {
     alert(searchString);
 }
 
-const onSelectedCallback = (genreSelected) => {
+const handleOnSelect = (genreSelected) => {
   alert(genreSelected);
 }
-
-const counterElement = React.createElement(Counter, {number: 1}, null);
-
-const searchElement = React.createElement(Searcher, {searchQuery: "Search String?", onSearch: (e) => onSearchCallback(e)},null);
 
 const inputData = ['Action',
 'Comedy',
@@ -26,10 +22,13 @@ const inputData = ['Action',
 'Mystery',
 'Romance',
 'Thriller',
-'Western']    
+'Western']
 
-const genreListElement = React.createElement(GenreSelector,{genreList: inputData, selectedGenre:"Fantasy", onSelect: (e) => onSelectedCallback(e)});
-
-return React.createElement('div', null ,counterElement,searchElement,genreListElement);
-  
+return (
+  <React.Fragment>
+    <Counter number={1} ></Counter>
+    <Searcher searchQuery={"Search String?"} onSearch={(e) => handleOnSearch(e)}></Searcher>
+    <GenreSelector genreList={inputData} selectedGenre={'Fantasy'} onSelect={ (e) => handleOnSelect(e)}></GenreSelector>
+  </React.Fragment>
+  );  
 }

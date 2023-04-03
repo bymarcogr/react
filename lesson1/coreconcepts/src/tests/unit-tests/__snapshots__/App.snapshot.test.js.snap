@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+Array [
   <span>
     <h1
       className="title"
@@ -31,7 +31,7 @@ exports[`renders correctly 1`] = `
         +
       </button>
     </span>
-  </span>
+  </span>,
   <span>
     <h1
       className="title"
@@ -55,7 +55,7 @@ exports[`renders correctly 1`] = `
         Search
       </button>
     </span>
-  </span>
+  </span>,
   <span>
     <h1
       className="title"
@@ -135,6 +135,6 @@ exports[`renders correctly 1`] = `
         Western
       </button>
     </span>
-  </span>
-</div>
+  </span>,
+]
 `;
