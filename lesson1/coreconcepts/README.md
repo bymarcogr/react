@@ -56,6 +56,11 @@ Screenshots saved in ./tests/integration-tests/screenshots
 
 **Note: Before run e2e tests, execute npm start in a separate console, it will run the react app before tests begin**
 
+### `npm storybook`
+
+To run Storybook in port 6006.
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

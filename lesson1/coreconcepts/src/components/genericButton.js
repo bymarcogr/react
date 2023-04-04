@@ -2,15 +2,15 @@ import React  from "react"
 import '../styles/global.css'
 
 export default function GenericButton (props) {
+    return (
+        <span>
+            <button onClick ={props.onClick} className={props.className}>
+            {props.title}
+            </button>
+        </span>
+    );
+}
 
-    const button = React.createElement(
-        'button',
-        {
-            onClick: props.onClick,
-            className: props.className ?? 'genericButton'
-        },
-        props.title
-    )
-    
-    return React.createElement('span', null , button);
+GenericButton.defaultProps = {
+    className:'genericButton'
 }

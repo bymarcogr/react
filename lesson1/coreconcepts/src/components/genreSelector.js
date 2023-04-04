@@ -1,7 +1,6 @@
 import React, { useState }  from "react"
 import GenericButton from "./genericButton";
 import '../styles/global.css'
-import {brElement, h1Element} from '../functions/generalElements'
 
 export default function GenreSelector (props) {
 
@@ -11,15 +10,24 @@ export default function GenreSelector (props) {
         setSelectedGenre(item);
         props.onSelect(item);
     }
-
-    const genreListElement = props.genreList?.map(function(genre){
-                                return React.createElement(GenericButton, {
-                                    key: genre,
-                                    title:genre,
-                                    className: genre === selectedGenre ? "netflixBarSelected": 'netflixBar',
-                                    onClick: (e) => handleClick(e.target.innerHTML)  
-                                });
-                            }) ;
     
-    return React.createElement('span', null ,h1Element('Genre List Component'), brElement() , genreListElement);
+    return(
+        <span>            
+            {props.genreList?.map(
+                genre => 
+                <GenericButton key={genre} 
+                title={genre} 
+                className = {genre === selectedGenre ? props.primaryButtonClassName ?? "netflixBarSelected": props.secondaryButtonClassName ?? 'netflixBar'} 
+                onClick={(e) => handleClick(e.target.innerHTML)}>
+                </GenericButton>
+            )}
+        </span>
+    );
+}
+
+GenreSelector.defaultProps = {
+    selectedGenre:"",
+    primaryButtonClassName:'netflixBarSelected',
+    secondaryButtonClassName: 'netflixBar'
+
 }

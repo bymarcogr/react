@@ -1,7 +1,6 @@
 import React, { useState }  from "react"
 import '../styles/global.css'
 import GenericButton from "./genericButton"
-import {brElement, h1Element} from '../functions/generalElements'
 
 export default function Searcher (props) {     
     
@@ -14,19 +13,21 @@ export default function Searcher (props) {
         }
     };
 
-    const searchButton = React.createElement(GenericButton, {title: "Search", onClick: () => props.onSearch(searchQuery), className:"netflixSearch"}, null);
+    return (
+        <span>           
+            <input type={'text'}
+            placeholder={'What do you want to watch?'} 
+            value={searchQuery} 
+            onKeyDown = {(e) => handleKeyDown(e)}
+            onChange = {(e) =>  setSearchQuery(e.target.value)}
+            className = {props.textClassName ?? 'search'}></input>
+            <GenericButton title={"Search"} onClick={() => props.onSearch(searchQuery)} className={props.buttonClassName ?? "netflixSearch"}></GenericButton>
+        </span>
+    );
+}
+
+Searcher.defaultProps = {
+    searchQuery:"",
+    onSearch: () => console.log('on search')
     
-    const searchTextBar = React.createElement(
-        'input',
-        {            
-            type:'text',
-            placeholder: 'What do you want to watch?',
-            value:  searchQuery,
-            onKeyDown: (e) => handleKeyDown(e),
-            onChange: (e) =>  setSearchQuery(e.target.value),
-            className:'search'
-        }
-    )
-    
-    return React.createElement('span', null ,h1Element('Search Component'), brElement() , searchTextBar ,searchButton);
 }
