@@ -1,10 +1,10 @@
-import Counter from './components/counter'
-import Searcher from './components/searcher'
-import GenreSelector from './components/genreSelector'
+import Counter from './counter'
+import Searcher from './searcher'
+import GenreSelector from './genreSelector'
 
 import React  from "react"
 
-export default function App () {
+export default function FirstLessonApp () {
 
 const handleOnSearch = (searchString) => {
     alert(searchString);
