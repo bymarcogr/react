@@ -5,15 +5,20 @@ import {brElement, h1Element} from '../functions/generalElements'
 
 export default function GenreSelector (props) {
 
-    const [selectedGenre, setSelectedGenre] = useState(props.selectedGenre);
+    const [selectedGenre, setSelectedGenre] = useState(props.selectedGenre ?? "");
+  
+    const handleClick = (item) =>{ 
+        setSelectedGenre(item);
+        props.onSelect(item);
+    }
 
-    const genreListElement = props.genreList.map(function(genre){
-                            return React.createElement(GenericButton, {
-                                key: genre,
-                                title:genre,
-                                className: genre === selectedGenre ? "netflixBarSelected": 'netflixBar',
-                                onClick: (e)=> {setSelectedGenre(e.target.innerText); props.onSelect(selectedGenre); }  
-                            });
+    const genreListElement = props.genreList?.map(function(genre){
+                                return React.createElement(GenericButton, {
+                                    key: genre,
+                                    title:genre,
+                                    className: genre === selectedGenre ? "netflixBarSelected": 'netflixBar',
+                                    onClick: (e) => handleClick(e.target.innerHTML)  
+                                });
                             }) ;
     
     return React.createElement('span', null ,h1Element('Genre List Component'), brElement() , genreListElement);

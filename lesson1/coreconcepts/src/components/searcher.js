@@ -5,7 +5,7 @@ import {brElement, h1Element} from '../functions/generalElements'
 
 export default function Searcher (props) {     
     
-    const [searchQuery, setSearchQuery] = useState(props.searchQuery);
+    const [searchQuery, setSearchQuery] = useState(props.searchQuery ?? "");
 
    const handleKeyDown = (event) => {
         if (event.key === "Enter") {
