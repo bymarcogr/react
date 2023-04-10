@@ -1,0 +1,1273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ThirdLessonApp correctly 1`] = `
+Array [
+  <h1
+    className="text-success"
+  >
+    Third Lesson
+  </h1>,
+  <span>
+    <div
+      className="container-fluid bg-black"
+    >
+      <div
+        className="float-end text-muted"
+      >
+        Sort By
+        <select
+          className="float-end form-select form-select-sm"
+          defaultValue="Title"
+          id="sort-by-select-id"
+          name="sort-by-select-id"
+          onChange={[Function]}
+          title="sort-by-select"
+        >
+          <option>
+            Release Date
+          </option>
+          <option>
+            Title
+          </option>
+        </select>
+      </div>
+      <div
+        className="row text-center"
+      >
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-1"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-1"
+            name="options-movie-1"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-1 prefix-movie-1-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="The Humanity Bureau"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMjQwNTk0NzAzNl5BMl5BanBnXkFtZTgwOTkyNzA2NDM@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-1"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-1"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              The Humanity Bureau
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2017
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-1"
+              >
+                Sci-Fi & Thriller
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-2"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-2"
+            name="options-movie-2"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-2 prefix-movie-2-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Banana in a Nutshell"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMjM2NTExNzgyMl5BMl5BanBnXkFtZTgwNjQxNDA2MDE@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-2"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-2"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Banana in a Nutshell
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2005
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-2"
+              >
+                Documentary
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-3"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-3"
+            name="options-movie-3"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-3 prefix-movie-3-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Wonderstruck"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNDM0MDY4ODY1Ml5BMl5BanBnXkFtZTgwMjYyOTExMzI@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-3"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-3"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Wonderstruck
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2017
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-3"
+              >
+                Adventure, Drama, Mystery
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-4"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-4"
+            name="options-movie-4"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-4 prefix-movie-4-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Star Wars: The Last Jedi"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BOTgxYzA5YTUtOGI4NC00NzYyLTk2YzYtYzUwMWUxZGJmNzRhXkEyXkFqcGdeQXVyNzQ0MDUyMzg@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-4"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-4"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Star Wars: The Last Jedi
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2017
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-4"
+              >
+                Action, Adventure, Fantasy
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-5"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-5"
+            name="options-movie-5"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-5 prefix-movie-5-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Ice Age: The Meltdown"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNTUwOTkxMDk2OF5BMl5BanBnXkFtZTcwNDg2NjYyMw@@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-5"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-5"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Ice Age: The Meltdown
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2006
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-5"
+              >
+                Animation, Adventure, Comedy
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-6"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-6"
+            name="options-movie-6"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-6 prefix-movie-6-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Bee Movie"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNzA2NzYwNDMyM15BMl5BanBnXkFtZTcwMTE0MDUzMw@@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-6"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-6"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Bee Movie
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2007
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-6"
+              >
+                Animation, Adventure, Comedy
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-7"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-7"
+            name="options-movie-7"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-7 prefix-movie-7-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Batman Begins"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BOTU1MDAyYzctYTAxYi00MjJiLTgyZjgtYzk2NTJiOGMzYWVjXkEyXkFqcGdeQXVyNjYyMTYxMzk@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-7"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-7"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Batman Begins
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2005
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-7"
+              >
+                Action, Crime, Drama
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-8"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-8"
+            name="options-movie-8"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-8 prefix-movie-8-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Extraterrestrial"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMTQ0MjUwNzQ3MV5BMl5BanBnXkFtZTgwMzk2NTY3MjE@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-8"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-8"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Extraterrestrial
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2014
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-8"
+              >
+                Action, Horror, Mystery
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-9"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-9"
+            name="options-movie-9"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-9 prefix-movie-9-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="G.I. Joe: The Rise of Cobra"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMTQzMTU1NzQwNl5BMl5BanBnXkFtZTcwNDg4NzMzMw@@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-9"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-9"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              G.I. Joe: The Rise of Cobra
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2009
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-9"
+              >
+                Action, Adventure, Sci-Fi
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-10"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-10"
+            name="options-movie-10"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-10 prefix-movie-10-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Cheaper by the Dozen 2"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BOWFhMjQ5ZDgtZTUwZC00Mjg0LTk1OGYtYTA2ZDMxZmE4ZjYzXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-10"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-10"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Cheaper by the Dozen 2
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2005
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-10"
+              >
+                Adventure, Comedy, Family
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-11"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-11"
+            name="options-movie-11"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-11 prefix-movie-11-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Guardians of the Galaxy"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BZTkwZjU3MTctMGExMi00YjU5LTgwMDMtOWNkZDRlZjQ4NmZhXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-11"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-11"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Guardians of the Galaxy
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2014
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-11"
+              >
+                Action, Adventure, Comedy
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-12"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-12"
+            name="options-movie-12"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-12 prefix-movie-12-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Hachi: A Dogs Tale"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNzE4NDg5OWMtMzg3NC00ZDRjLTllMDMtZTRjNWZmNjBmMGZlXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-12"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-12"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Hachi: A Dogs Tale
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2009
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-12"
+              >
+                Biography, Drama, Family
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-13"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-13"
+            name="options-movie-13"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-13 prefix-movie-13-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Happy Feet"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BZWU2NDkxYjktNWVlMS00MTM4LWJjMDAtOWYxZjJkZWFhYzAxXkEyXkFqcGdeQXVyMTA1NjE5MTAz._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-13"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-13"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Happy Feet
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2006
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-13"
+              >
+                Animation, Adventure, Comedy
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-14"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-14"
+            name="options-movie-14"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-14 prefix-movie-14-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Harry Potter and the Sorcerers Stone"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNmQ0ODBhMjUtNDRhOC00MGQzLTk5MTAtZDliODg5NmU5MjZhXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-14"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-14"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Harry Potter and the Sorcerers Stone
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2001
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-14"
+              >
+                Family, Adventure, Fantasy
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-15"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-15"
+            name="options-movie-15"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-15 prefix-movie-15-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Harry Potter and the Order of the Phoenix"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BOTA3MmRmZDgtOWU1Ny00ZDc5LWFkN2YtNzNlY2UxZmY0N2IyXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-15"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-15"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Harry Potter and the Order of the Phoenix
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2007
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-15"
+              >
+                Action, Adventure, Fantasy
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
+          style={
+            Object {
+              "margin": 5,
+              "maxHeight": 500,
+              "maxWidth": 350,
+            }
+          }
+          title="movie-16"
+        >
+          <div
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            data-testid="options-movie-16"
+            name="options-movie-16"
+          >
+            <button
+              aria-expanded={false}
+              className="dropdown-toggle prefix-movie-16 prefix-movie-16-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              ⋮
+            </button>
+          </div>
+          <img
+            alt="Harry Potter and the Deathly Hallows: Part 2"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg"
+            style={
+              Object {
+                "cursor": "pointer",
+                "maxHeight": "90%",
+                "maxWidth": "95%",
+              }
+            }
+            title="img-preview-movie-16"
+          />
+          <div
+            className="text-bg-dark position-absolute bottom-0 p-4 "
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "marginLeft": "-12px",
+                "width": "100%",
+              }
+            }
+            title="info-bar-movie-16"
+          >
+            <div
+              className="position-absolute top-0 start-0"
+            >
+              Harry Potter and the Deathly Hallows: Part 2
+            </div>
+            <div
+              className="position-absolute top-0 end-0"
+            >
+              <span
+                className="badge rounded-pill bg-secondary"
+              >
+                2011
+              </span>
+            </div>
+            <div
+              className="position-absolute top-2 start-0"
+            >
+              <small
+                className="text-muted"
+                data-testid="movie-genders-16"
+              >
+                Action, Adventure, Fantasy
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </span>,
+]
+`;

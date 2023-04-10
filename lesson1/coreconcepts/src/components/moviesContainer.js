@@ -11,11 +11,11 @@ export default function MoviesContainer(props) {
 
   const handleOnClick = (movie) => {
     setSelectedMovie(movie);
-    console.log(movie);
   };
 
   const handleOnSort = (option) => {
     option === "Title" ? sortByTitle() : sortByYear();
+    setSelectedMovie(null);
   };
 
   const sortByTitle = () => {

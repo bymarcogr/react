@@ -18,7 +18,7 @@ export const MoviesListDefault = [
     "https://m.media-amazon.com/images/M/MV5BMjM2NTExNzgyMl5BMl5BanBnXkFtZTgwNjQxNDA2MDE@._V1_.jpg",
     ["Documentary"],
     6.6,
-    0,
+    98,
     "An intimate portrait of a Chinese-European couple in New Zealand, and their journey to get a blessing for marriage from traditional Chinese parents."
   ),
   new MovieInfo(

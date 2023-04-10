@@ -8,6 +8,7 @@ export default function MovieDetails({ movie }) {
     movie && (
       <div
         className="row text-center border border-secondary-subtle"
+        title={`preview-movie-${movie.id}`}
         style={{
           margin: 5,
           padding: 10,
