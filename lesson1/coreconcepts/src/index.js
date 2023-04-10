@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import FirstLessonApp from './components/firstLessonApp';
 import reportWebVitals from './reportWebVitals';
 import ThirdLessonApp from './components/thirdLessonApp'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

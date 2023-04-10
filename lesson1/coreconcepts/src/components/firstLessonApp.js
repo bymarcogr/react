@@ -25,7 +25,7 @@ const inputData = ['Action',
 'Western']
 
 return (
-  <React.Fragment>
+  <div style={{padding: "5px"}}>
     <h1 className="title">Counter Component</h1>
     <Counter number={1} ></Counter>
     <h1 className="title">Search Component</h1>
@@ -34,6 +34,6 @@ return (
     <h1 className="title">Genre List Component</h1>
     <br/>
     <GenreSelector genreList={inputData} selectedGenre={'Fantasy'} onSelect={ (e) => handleOnSelect(e)}></GenreSelector>
-  </React.Fragment>
+  </div>
   );  
 }

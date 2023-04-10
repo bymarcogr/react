@@ -1,12 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-Array [
+<div
+  style={
+    Object {
+      "padding": "5px",
+    }
+  }
+>
   <h1
     className="title"
   >
     Counter Component
-  </h1>,
+  </h1>
   <span>
     <span
       className="counter-title"
@@ -31,13 +37,13 @@ Array [
         +
       </button>
     </span>
-  </span>,
+  </span>
   <h1
     className="title"
   >
     Search Component
-  </h1>,
-  <br />,
+  </h1>
+  <br />
   <span>
     <input
       className="search"
@@ -55,13 +61,13 @@ Array [
         Search
       </button>
     </span>
-  </span>,
+  </span>
   <h1
     className="title"
   >
     Genre List Component
-  </h1>,
-  <br />,
+  </h1>
+  <br />
   <span>
     <span>
       <button
@@ -135,6 +141,6 @@ Array [
         Western
       </button>
     </span>
-  </span>,
-]
+  </span>
+</div>
 `;
