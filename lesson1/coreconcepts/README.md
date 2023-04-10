@@ -2,7 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
 ## Stack references
 
 - [Jest](https://jestjs.io/docs/getting-started)
@@ -11,6 +10,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [Web Driver IO](https://webdriver.io/docs/gettingstarted)
 
+## Stack references
+
+- [Jest](https://jestjs.io/docs/getting-started)
+
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
+- [Web Driver IO](https://webdriver.io/docs/gettingstarted)
 
 ## Available Scripts
 
@@ -60,7 +66,6 @@ Screenshots saved in ./tests/integration-tests/screenshots
 
 To run Storybook in port 6006.
 
-
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
@@ -90,4 +95,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
