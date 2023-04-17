@@ -1,13 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "padding": "5px",
+    }
+  }
+>
+  <h1
+    className="title"
+  >
+    Counter Component
+  </h1>
   <span>
-    <h1
-      className="title"
-    >
-      Counter Component
-    </h1>
     <span
       className="counter-title"
       title="number-to-display"
@@ -32,13 +38,13 @@ exports[`renders correctly 1`] = `
       </button>
     </span>
   </span>
+  <h1
+    className="title"
+  >
+    Search Component
+  </h1>
+  <br />
   <span>
-    <h1
-      className="title"
-    >
-      Search Component
-    </h1>
-    <br />
     <input
       className="search"
       onChange={[Function]}
@@ -56,13 +62,13 @@ exports[`renders correctly 1`] = `
       </button>
     </span>
   </span>
+  <h1
+    className="title"
+  >
+    Genre List Component
+  </h1>
+  <br />
   <span>
-    <h1
-      className="title"
-    >
-      Genre List Component
-    </h1>
-    <br />
     <span>
       <button
         className="netflixBar"

@@ -1,23 +1,23 @@
 import { render, screen } from '@testing-library/react';
-import App from '../../App';
+import FirstLessonApp from '../../components/firstLessonApp';
 
-describe("App", () => {
+describe("FirstLessonApp", () => {
 
   test('renders Counter Component', () => {
-    render(<App />);
+    render(<FirstLessonApp />);
     expect(screen.getByText(/Counter Component/i)).toBeInTheDocument();
     expect(screen.getByRole('button',{name: "+"})).toBeInTheDocument();
     expect(screen.getByRole('button',{name: "-"})).toBeInTheDocument();  
   });
   
   test('renders Searcher Component', () => {
-    render(<App />);
+    render(<FirstLessonApp />);
     expect(screen.getByText(/Search Component/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/What do you want to watch/i)).toBeInTheDocument();
     expect(screen.getByRole('button',{name: "Search"})).toBeInTheDocument();
   });
    test('renders Genre Selector Component', () => {
-    render(<App />);
+    render(<FirstLessonApp />);
     expect(screen.getByText(/Genre List Component/i)).toBeInTheDocument();
     expect(screen.getByRole('button',{name: "Action"})).toBeInTheDocument();
     expect(screen.getByRole('button',{name: "Comedy"})).toBeInTheDocument();  

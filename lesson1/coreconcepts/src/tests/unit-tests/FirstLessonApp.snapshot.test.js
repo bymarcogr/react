@@ -1,9 +1,9 @@
 import renderer from 'react-test-renderer';
-import App from '../../App';
+import FirstLessonApp from '../../components/firstLessonApp';
 
 it('renders correctly', () => {
     const tree = renderer
-      .create(<App />)
+      .create(<FirstLessonApp />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
