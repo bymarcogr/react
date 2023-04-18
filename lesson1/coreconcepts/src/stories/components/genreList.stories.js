@@ -1,24 +1,30 @@
 import GenreSelector from "../../components/genreSelector";
 
-export default{
-    title:'Genre List',
-    component: GenreSelector
-}
+import { GenreListDefault } from "../../models/genreListDefault";
 
-const inputData = ['Action',
-'Comedy',
-'Drama',
-'Fantasy',
-'Horror',
-'Mystery',
-'Romance',
-'Thriller',
-'Western']
+export default {
+  title: "Genre List",
+  component: GenreSelector,
+};
 
 const handleOnSelect = (genreSelected) => {
-    alert(genreSelected);
-  }
+  alert(genreSelected);
+};
 
-export const Original = () => <GenreSelector  genreList={inputData} selectedGenre={'Western'} onSelect={ (e) => handleOnSelect(e)}></GenreSelector>
+export const Original = () => (
+  <GenreSelector
+    genreList={GenreListDefault}
+    selectedGenre={"Western"}
+    onSelect={(e) => handleOnSelect(e)}
+  ></GenreSelector>
+);
 
-export const Secondary = () => <GenreSelector  genreList={inputData} selectedGenre={'Western'} onSelect={ (e) => handleOnSelect(e)} primaryButtonClassName={'netflixBar'} secondaryButtonClassName={'netflixBarSelected'}></GenreSelector>
+export const Secondary = () => (
+  <GenreSelector
+    genreList={GenreListDefault}
+    selectedGenre={"Western"}
+    onSelect={(e) => handleOnSelect(e)}
+    primaryButtonClassName={"netflixBar"}
+    secondaryButtonClassName={"netflixBarSelected"}
+  ></GenreSelector>
+);

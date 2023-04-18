@@ -38,6 +38,7 @@ export default function GenericDialog({
                   <button
                     type="button"
                     className="btn-close btn-close-white position-absolute"
+                    title="btn-close-dialog"
                     style={{ right: 5, top: 5, color: "#ffffff" }}
                     onClick={onClose}
                   ></button>

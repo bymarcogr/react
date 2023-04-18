@@ -28,6 +28,7 @@ export default function FourthLessonApp() {
         <button
           type="button"
           className="btn btn-primary"
+          title="btn-show-dialog"
           onClick={() => setIsDemoOpen(true)}
         >
           Show Generic Dialog
@@ -40,6 +41,7 @@ export default function FourthLessonApp() {
         <button
           type="button"
           className="btn btn-danger"
+          title="btn-add-movie"
           onClick={() => setIsAddMovieOpen(true)}
         >
           Add Movie

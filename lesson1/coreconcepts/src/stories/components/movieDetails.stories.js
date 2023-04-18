@@ -1,5 +1,5 @@
 import MovieDetails from "../../components/movieDetails";
-import { MoviesListDefault } from "../../../models/moviesListDefault";
+import { MoviesListDefault } from "../../models/moviesListDefault";
 
 export default {
   title: "Movie Details",

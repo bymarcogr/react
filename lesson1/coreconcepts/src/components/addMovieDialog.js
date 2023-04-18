@@ -18,8 +18,10 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
     <>
       <GenericDialog showDialog={isOpen} onClose={onClose} title={title()}>
         <form
+          title="modal-add-movie-dialog"
           onSubmit={(e) => {
             onSubmit(e);
+            onClose();
           }}
         >
           <div className="container ">
@@ -125,11 +127,13 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
             type="submit"
             className="form-button  float-end"
             value="Submit"
+            title="btn-submit-add-movie"
           />
           <input
             type="reset"
             className="form-button-secondary float-end"
             value="Reset"
+            title="btn-reset-add-movie"
           />
         </form>
       </GenericDialog>
@@ -139,4 +143,7 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
 
 AddMovieDialog.propTypes = {
   movie: PropTypes.instanceOf(MovieInfo),
+  onClose: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 };

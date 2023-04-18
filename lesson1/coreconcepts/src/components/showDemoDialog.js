@@ -10,25 +10,27 @@ export default function ShowDemoDialog({ isOpen, onClose }) {
   return (
     <>
       <GenericDialog showDialog={isOpen} onClose={onClose} title={title}>
-        <div className="mb-3">
-          <label htmlFor="recipient-name" className="col-form-label">
-            Recipient:
-          </label>
-          <textarea className="form-control" id="message-text"></textarea>
+        <div title="modal-generic-dialog">
+          <div className="mb-3">
+            <label htmlFor="recipient-name" className="col-form-label">
+              Recipient:
+            </label>
+            <textarea className="form-control" id="message-text"></textarea>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="message-text" className="col-form-label">
+              Message:
+            </label>
+            <textarea className="form-control" id="message-text"></textarea>
+          </div>
+          <button
+            type="button"
+            className="netflixSearch float-end"
+            onClick={onClose}
+          >
+            Close
+          </button>
         </div>
-        <div className="mb-3">
-          <label htmlFor="message-text" className="col-form-label">
-            Message:
-          </label>
-          <textarea className="form-control" id="message-text"></textarea>
-        </div>
-        <button
-          type="button"
-          className="netflixSearch float-end"
-          onClick={onClose}
-        >
-          Close
-        </button>
       </GenericDialog>
     </>
   );

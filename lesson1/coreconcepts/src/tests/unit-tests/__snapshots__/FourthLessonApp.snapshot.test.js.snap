@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders FourthLessonApp correctly 1`] = `
+<div>
+  <h1
+    className="text-success"
+  >
+    Fourth Lesson
+  </h1>
+  <div
+    className="container-fluid"
+  >
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      title="btn-show-dialog"
+      type="button"
+    >
+      Show Generic Dialog
+    </button>
+    <br />
+    <br />
+    <button
+      className="btn btn-danger"
+      onClick={[Function]}
+      title="btn-add-movie"
+      type="button"
+    >
+      Add Movie
+    </button>
+  </div>
+</div>
+`;
