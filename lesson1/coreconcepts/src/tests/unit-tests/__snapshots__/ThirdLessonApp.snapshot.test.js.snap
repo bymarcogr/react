@@ -104,7 +104,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-1"
+                data-testid="movie-genres-1"
               >
                 Sci-Fi & Thriller
               </small>
@@ -181,7 +181,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-2"
+                data-testid="movie-genres-2"
               >
                 Documentary
               </small>
@@ -258,7 +258,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-3"
+                data-testid="movie-genres-3"
               >
                 Adventure, Drama, Mystery
               </small>
@@ -335,7 +335,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-4"
+                data-testid="movie-genres-4"
               >
                 Action, Adventure, Fantasy
               </small>
@@ -412,7 +412,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-5"
+                data-testid="movie-genres-5"
               >
                 Animation, Adventure, Comedy
               </small>
@@ -489,7 +489,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-6"
+                data-testid="movie-genres-6"
               >
                 Animation, Adventure, Comedy
               </small>
@@ -566,7 +566,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-7"
+                data-testid="movie-genres-7"
               >
                 Action, Crime, Drama
               </small>
@@ -643,7 +643,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-8"
+                data-testid="movie-genres-8"
               >
                 Action, Horror, Mystery
               </small>
@@ -720,7 +720,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-9"
+                data-testid="movie-genres-9"
               >
                 Action, Adventure, Sci-Fi
               </small>
@@ -797,7 +797,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-10"
+                data-testid="movie-genres-10"
               >
                 Adventure, Comedy, Family
               </small>
@@ -874,7 +874,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-11"
+                data-testid="movie-genres-11"
               >
                 Action, Adventure, Comedy
               </small>
@@ -951,7 +951,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-12"
+                data-testid="movie-genres-12"
               >
                 Biography, Drama, Family
               </small>
@@ -1028,7 +1028,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-13"
+                data-testid="movie-genres-13"
               >
                 Animation, Adventure, Comedy
               </small>
@@ -1105,7 +1105,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-14"
+                data-testid="movie-genres-14"
               >
                 Family, Adventure, Fantasy
               </small>
@@ -1182,7 +1182,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-15"
+                data-testid="movie-genres-15"
               >
                 Action, Adventure, Fantasy
               </small>
@@ -1259,7 +1259,7 @@ Array [
             >
               <small
                 className="text-muted"
-                data-testid="movie-genders-16"
+                data-testid="movie-genres-16"
               >
                 Action, Adventure, Fantasy
               </small>

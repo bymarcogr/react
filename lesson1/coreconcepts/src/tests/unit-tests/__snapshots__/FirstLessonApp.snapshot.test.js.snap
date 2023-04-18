@@ -82,6 +82,30 @@ exports[`renders correctly 1`] = `
         className="netflixBar"
         onClick={[Function]}
       >
+        Adventure
+      </button>
+    </span>
+    <span>
+      <button
+        className="netflixBar"
+        onClick={[Function]}
+      >
+        Animation
+      </button>
+    </span>
+    <span>
+      <button
+        className="netflixBar"
+        onClick={[Function]}
+      >
+        Biography
+      </button>
+    </span>
+    <span>
+      <button
+        className="netflixBar"
+        onClick={[Function]}
+      >
         Comedy
       </button>
     </span>
@@ -90,7 +114,31 @@ exports[`renders correctly 1`] = `
         className="netflixBar"
         onClick={[Function]}
       >
+        Crime
+      </button>
+    </span>
+    <span>
+      <button
+        className="netflixBar"
+        onClick={[Function]}
+      >
+        Documentary
+      </button>
+    </span>
+    <span>
+      <button
+        className="netflixBar"
+        onClick={[Function]}
+      >
         Drama
+      </button>
+    </span>
+    <span>
+      <button
+        className="netflixBar"
+        onClick={[Function]}
+      >
+        Family
       </button>
     </span>
     <span>
@@ -123,6 +171,14 @@ exports[`renders correctly 1`] = `
         onClick={[Function]}
       >
         Romance
+      </button>
+    </span>
+    <span>
+      <button
+        className="netflixBar"
+        onClick={[Function]}
+      >
+        Sci-Fi
       </button>
     </span>
     <span>

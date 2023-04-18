@@ -3,7 +3,7 @@ export class MovieInfo {
   image_url;
   name = "New Movie";
   release_year;
-  genders = [];
+  genres = [];
   rating;
   duration;
   description;
@@ -13,7 +13,7 @@ export class MovieInfo {
     name,
     release_year,
     image_url,
-    genders,
+    genres,
     rating,
     duration,
     description
@@ -22,21 +22,21 @@ export class MovieInfo {
     this.name = name;
     this.release_year = release_year;
     this.image_url = image_url;
-    this.genders = genders;
+    this.genres = genres;
     this.rating = rating;
     this.duration = duration;
     this.description = description;
   }
 
-  get formatedGenders() {
-    if (this.genders == null || this.genders.length === 0) {
+  get formatedgenres() {
+    if (this.genres == null || this.genres.length === 0) {
       return "";
     }
-    if (this.genders.length === 2) {
-      return this.genders.join(" & ");
+    if (this.genres.length === 2) {
+      return this.genres.join(" & ");
     }
 
-    return this.genders.join(", ");
+    return this.genres.join(", ");
   }
 
   get formatedDuration() {
@@ -44,5 +44,13 @@ export class MovieInfo {
     const hours = Math.floor(this.duration / 60);
 
     return `${hours}h ${minutes}m`;
+  }
+
+  get formatedDate() {
+    if (this.release_year == null || this.genres.release_year === 0) {
+      return "";
+    }
+
+    return this.release_year + "-01-01";
   }
 }
