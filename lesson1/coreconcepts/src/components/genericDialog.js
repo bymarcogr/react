@@ -8,6 +8,7 @@ export default function GenericDialog({
   showDialog,
   onClose,
   title,
+  modalSize,
 }) {
   return (
     <>
@@ -28,7 +29,11 @@ export default function GenericDialog({
             aria-modal="true"
             role="dialog"
           >
-            <div className="modal-dialog modal-dialog-scrollable text-light modal-lg">
+            <div
+              className={`modal-dialog modal-dialog-scrollable text-light modal-${
+                modalSize ?? "lg"
+              }`}
+            >
               <div
                 className="modal-content "
                 style={{ backgroundColor: "#232323" }}

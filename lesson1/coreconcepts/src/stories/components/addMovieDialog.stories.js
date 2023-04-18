@@ -1,8 +1,9 @@
 import AddMovieDialog from "../../components/addMovieDialog";
+
 import { MoviesListDefault } from "../../models/moviesListDefault";
 
 export default {
-  title: "Add Movie Dialog",
+  title: "Movie Dialog",
   component: AddMovieDialog,
 };
 

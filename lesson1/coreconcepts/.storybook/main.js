@@ -1,5 +1,4 @@
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
-import style from "bootstrap/dist/css/bootstrap.css";
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -7,6 +6,7 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
+    "@storybook/addon-styling",
   ],
   framework: {
     name: "@storybook/react-webpack5",
