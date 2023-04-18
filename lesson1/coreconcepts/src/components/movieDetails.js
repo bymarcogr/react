@@ -42,7 +42,7 @@ export default function MovieDetails({ movie }) {
           </div>
           <br />
           <div className="col-sm-12 col-md-6  col-lg-6 text-white-50 text-start fs-4">
-            {movie.formatedgenres}
+            {movie.formatedGenres}
           </div>
           <br />
           <div className="col-sm-12 col-md-6  col-lg-6 text-danger text-start  fs-3">

@@ -54,7 +54,7 @@ export default function MoviePreview({ movie, onClick }) {
               data-testid={`movie-genres-${movie.id}`}
               className="text-muted"
             >
-              {movie.formatedgenres}
+              {movie.formatedGenres}
             </small>
           </div>
         </div>

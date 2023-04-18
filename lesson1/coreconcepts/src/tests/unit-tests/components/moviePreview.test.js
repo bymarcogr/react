@@ -11,7 +11,7 @@ describe("MoviePreview", () => {
     const expectedMovie = screen.getByTitle("movie-16");
     expect(expectedMovie).toHaveTextContent(movie.name);
     expect(expectedMovie).toHaveTextContent(movie.release_year);
-    expect(expectedMovie).toHaveTextContent(movie.formatedgenres);
+    expect(expectedMovie).toHaveTextContent(movie.formatedGenres);
   });
 
   test("When prop movie is defined and onClick not defined, Should display values and Not Throw Exception", () => {
@@ -24,7 +24,7 @@ describe("MoviePreview", () => {
 
     expect(expectedMovie).toHaveTextContent(movie.name);
     expect(expectedMovie).toHaveTextContent(movie.release_year);
-    expect(expectedMovie).toHaveTextContent(movie.formatedgenres);
+    expect(expectedMovie).toHaveTextContent(movie.formatedGenres);
   });
 
   test("When prop movie is defined and onClick null, Should not display values and Not Throw Exception", () => {
@@ -32,7 +32,7 @@ describe("MoviePreview", () => {
     const expectedMovie = screen.getByTitle("movie-16");
     expect(expectedMovie).toHaveTextContent(movie.name);
     expect(expectedMovie).toHaveTextContent(movie.release_year);
-    expect(expectedMovie).toHaveTextContent(movie.formatedgenres);
+    expect(expectedMovie).toHaveTextContent(movie.formatedGenres);
 
     fireEvent.click(
       screen.getByText(/Harry Potter and the Deathly Hallows: Part 2/i)

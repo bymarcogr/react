@@ -28,7 +28,7 @@ export class MovieInfo {
     this.description = description;
   }
 
-  get formatedgenres() {
+  get formatedGenres() {
     if (this.genres == null || this.genres.length === 0) {
       return "";
     }
