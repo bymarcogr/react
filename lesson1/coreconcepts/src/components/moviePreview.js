@@ -6,7 +6,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 
 import { MovieInfo } from "../models/movieInfo";
 
-export default function MoviePreview({ movie, onClick }) {
+export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
   return (
     movie && (
       <div
@@ -26,8 +26,12 @@ export default function MoviePreview({ movie, onClick }) {
           variant="light"
           bsPrefix={`prefix-movie-${movie.id}`}
         >
-          <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-          <Dropdown.Item eventKey="2">Delete</Dropdown.Item>
+          <Dropdown.Item eventKey="1" onClick={() => onEdit(movie)}>
+            Edit
+          </Dropdown.Item>
+          <Dropdown.Item eventKey="2" onClick={() => onDelete(movie.id)}>
+            Delete
+          </Dropdown.Item>
         </DropdownButton>
         <img
           title={`img-preview-movie-${movie.id}`}

@@ -12,24 +12,36 @@ Array [
       className="container-fluid bg-black"
     >
       <div
-        className="float-end text-muted"
+        className="row text-muted float-end"
       >
-        Sort By
-        <select
-          className="float-end form-select form-select-sm"
-          defaultValue="Title"
-          id="sort-by-select-id"
-          name="sort-by-select-id"
-          onChange={[Function]}
-          title="sort-by-select"
+        <label
+          className="col-4 end-0 lead text-uppercase fs-5 light "
         >
-          <option>
-            Release Date
-          </option>
-          <option>
-            Title
-          </option>
-        </select>
+          Sort By
+           
+        </label>
+        <div
+          className="col-8 sort-select "
+        >
+          <select
+            defaultValue="Title"
+            id="sort-by-select-id"
+            name="sort-by-select-id"
+            onChange={[Function]}
+            title="sort-by-select"
+          >
+            <option
+              className="text-uppercase"
+            >
+              Release Date
+            </option>
+            <option
+              className="text-uppercase"
+            >
+              Title
+            </option>
+          </select>
+        </div>
       </div>
       <div
         className="row text-center"

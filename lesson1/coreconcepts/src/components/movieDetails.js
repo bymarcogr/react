@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 import { MovieInfo } from "../models/movieInfo";
 
-export default function MovieDetails({ movie }) {
+export default function MovieDetails({ movie, maxImageHeight, maxImageWidth }) {
   return (
     movie && (
       <div
-        className="row text-center border border-secondary-subtle"
+        className="row text-center "
         title={`preview-movie-${movie.id}`}
         style={{
           margin: 5,
@@ -17,8 +17,8 @@ export default function MovieDetails({ movie }) {
         <div
           className="col-sm-12 col-md-4 col-lg-4 border border-dark rounded-3"
           style={{
-            maxHeight: 700,
-            maxWidth: 350,
+            maxHeight: maxImageHeight ?? 700,
+            maxWidth: maxImageWidth ?? 350,
             margin: 5,
           }}
         >
@@ -49,7 +49,7 @@ export default function MovieDetails({ movie }) {
             {movie.release_year}&emsp;{movie.formatedDuration}
           </div>
           <br />
-          <div className="col-sm-12 col-md-12  col-lg-12 text-white-50 text-start">
+          <div className="col-sm-12 col-md-12  col-lg-12 text-white-50 text-start max-lines">
             {movie.description}
           </div>
         </div>
@@ -59,5 +59,5 @@ export default function MovieDetails({ movie }) {
 }
 
 MovieDetails.propTypes = {
-  movie: PropTypes.instanceOf(MovieInfo),
+  movie: PropTypes.instanceOf(MovieInfo).isRequired,
 };

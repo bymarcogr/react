@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import MovieTile from "./movieTile";
 import { MovieInfo } from "../models/movieInfo";
 import MovieDetails from "./movieDetails";
+import SortMovies from "./sortMovies";
 
 export default function MoviesContainer(props) {
   const [moviesList, setMoviesList] = useState(props.movies);
@@ -35,11 +36,12 @@ export default function MoviesContainer(props) {
   return (
     <div className="container-fluid bg-black">
       <MovieDetails movie={selectedMovie}></MovieDetails>
-      <MovieTile
-        movies={moviesList}
-        onClick={handleOnClick}
-        onSort={handleOnSort}
-      ></MovieTile>
+      <MovieTile movies={moviesList} onClick={handleOnClick}>
+        <SortMovies
+          onSort={handleOnSort}
+          containerClassName={"float-end"}
+        ></SortMovies>
+      </MovieTile>
     </div>
   );
 }
