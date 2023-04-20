@@ -15,11 +15,13 @@ const handleOnSort = (movie) => {
 };
 
 export const Original = () => (
-  <MovieTile
-    movies={MoviesListDefault}
-    onClick={handleOnClick}
-    onSort={handleOnSort}
-  ></MovieTile>
+  <div className="container-fluid bg-black">
+    <MovieTile
+      movies={MoviesListDefault}
+      onClick={handleOnClick}
+      onSort={handleOnSort}
+    ></MovieTile>
+  </div>
 );
 
 export const Secondary = () => (

@@ -7,9 +7,13 @@ export default {
 };
 
 export const Original = () => (
-  <MoviesContainer movies={MoviesListDefault}></MoviesContainer>
+  <div className="container-fluid bg-black">
+    <MoviesContainer movies={MoviesListDefault}></MoviesContainer>
+  </div>
 );
 
 export const Secondary = () => (
-  <MoviesContainer movies={MoviesListDefault}></MoviesContainer>
+  <div className="container-fluid bg-white">
+    <MoviesContainer movies={MoviesListDefault}></MoviesContainer>
+  </div>
 );

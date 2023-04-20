@@ -12,7 +12,7 @@ describe("MoviePreview", () => {
     const expectedMovie = screen.getByTitle("preview-movie-16");
     expect(expectedMovie).toHaveTextContent(movie.name);
     expect(expectedMovie).toHaveTextContent(movie.release_year);
-    expect(expectedMovie).toHaveTextContent(movie.formatedGenders);
+    expect(expectedMovie).toHaveTextContent(movie.formatedGenres);
     expect(expectedMovie).toHaveTextContent(movie.rating);
     expect(expectedMovie).toHaveTextContent(movie.formatedDuration);
   });

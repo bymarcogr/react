@@ -1,5 +1,5 @@
 import MovieDetails from "../../components/movieDetails";
-import { MoviesListDefault } from "../../../models/moviesListDefault";
+import { MoviesListDefault } from "../../models/moviesListDefault";
 
 export default {
   title: "Movie Details",
@@ -7,9 +7,13 @@ export default {
 };
 
 export const Original = () => (
-  <MovieDetails movie={MoviesListDefault[0]}></MovieDetails>
+  <div className="container-fluid bg-black">
+    <MovieDetails movie={MoviesListDefault[0]}></MovieDetails>
+  </div>
 );
 
 export const Secondary = () => (
-  <MovieDetails movie={MoviesListDefault[10]}></MovieDetails>
+  <div className="container-fluid bg-primary">
+    <MovieDetails movie={MoviesListDefault[10]}></MovieDetails>
+  </div>
 );

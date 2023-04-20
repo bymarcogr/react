@@ -13,11 +13,11 @@ describe("MoviesContainer", () => {
     const expectedMovie1 = screen.getByTitle("movie-9");
     expect(expectedMovie1).toHaveTextContent(movie1.name);
     expect(expectedMovie1).toHaveTextContent(movie1.release_year);
-    expect(expectedMovie1).toHaveTextContent(movie1.formatedGenders);
+    expect(expectedMovie1).toHaveTextContent(movie1.formatedGenres);
     const expectedMovie2 = screen.getByTitle("movie-1");
     expect(expectedMovie2).toHaveTextContent(movie2.name);
     expect(expectedMovie2).toHaveTextContent(movie2.release_year);
-    expect(expectedMovie2).toHaveTextContent(movie2.formatedGenders);
+    expect(expectedMovie2).toHaveTextContent(movie2.formatedGenres);
   });
 
   test("When prop movies is not defined, Should not display values", () => {

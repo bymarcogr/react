@@ -51,10 +51,10 @@ export default function MoviePreview({ movie, onClick }) {
           </div>
           <div className="position-absolute top-2 start-0">
             <small
-              data-testid={`movie-genders-${movie.id}`}
+              data-testid={`movie-genres-${movie.id}`}
               className="text-muted"
             >
-              {movie.formatedGenders}
+              {movie.formatedGenres}
             </small>
           </div>
         </div>
