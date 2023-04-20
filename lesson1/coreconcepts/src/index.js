@@ -5,6 +5,7 @@ import FirstLessonApp from "./components/firstLessonApp";
 import reportWebVitals from "./reportWebVitals";
 import ThirdLessonApp from "./components/thirdLessonApp";
 import FourthLessonApp from "./components/fourthLessonApp";
+import FifthLessonApp from "./components/fifthLessonApp";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -35,12 +36,19 @@ root.render(
                   Advanced Components
                 </Link>
               </li>
+              <br />
+              <li>
+                <Link to="lesson5" target="_blank">
+                  Hooks
+                </Link>
+              </li>
             </ul>
           }
         ></Route>
         <Route exact path="/lesson1" element={<FirstLessonApp />}></Route>
         <Route exact path="/lesson3" element={<ThirdLessonApp />}></Route>
         <Route exact path="/lesson4" element={<FourthLessonApp />}></Route>
+        <Route exact path="/lesson5" element={<FifthLessonApp />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
