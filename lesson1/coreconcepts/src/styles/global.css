@@ -84,10 +84,9 @@
 }
 
 .netflixBar {
-  padding: 11px 19px;
+  padding: 11px 12px;
   font-size: 12px;
   font-weight: normal;
-  font-stretch: extra-expanded;
   color: #fff;
   background-color: #232323;
   border: 2px solid #232323;
@@ -101,7 +100,7 @@
 }
 .netflixBarSelected {
   padding: 11px 10px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   border: 2px solid #232323;
   cursor: pointer;

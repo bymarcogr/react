@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import Searcher from "./searcher";
 import MovieDetails from "./movieDetails";
@@ -11,6 +11,8 @@ import { MovieInfo } from "../models/movieInfo";
 
 import { GenreListDefault } from "../models/genreListDefault";
 import Axios from "axios";
+
+const baseUrl = "http://localhost:4000/movies";
 
 export default function MovieListPage() {
   const [isAddMovieOpen, setIsAddMovieOpen] = useState(false);
@@ -92,9 +94,7 @@ export default function MovieListPage() {
     );
   };
 
-  const baseUrl = "http://localhost:4000/movies";
-
-  const axiosParams = () => {
+  const axiosParams = useCallback(() => {
     let params = {};
 
     params["limit"] = 20;
@@ -107,15 +107,14 @@ export default function MovieListPage() {
     if (selectedGenre !== "") {
       params["search"] = selectedGenre;
       params["searchBy"] = "genres";
+      params["sortBy"] = "title";
     }
 
-    if (sortBy !== "") {
-      params["sortBy"] = sortBy;
-      params["sortOrder"] = "asc";
-    }
+    params["sortBy"] = sortBy !== "" ? sortBy : "title";
+    params["sortOrder"] = "asc";
 
     return params;
-  };
+  }, [searchString, selectedGenre, sortBy]);
 
   useEffect(() => {
     Axios.get(baseUrl, {
@@ -140,10 +139,10 @@ export default function MovieListPage() {
           title="movie-container-header"
           className="row justify-content-center"
         >
-          <div className="col-10" style={{ height: "450px" }}>
-            <div className="row align-items-center" style={{ height: "50px" }}>
-              <div className="col-1 ">App</div>
-              <div className="col-2 offset-8">
+          <div className="col-lg-10">
+            <div className="row align-items-center">
+              <div className="col-lg-1 ">App</div>
+              <div className="col-lg-2 offset-8">
                 <button
                   type="button"
                   className="add-movie-button text-uppercase fs-6"
@@ -165,16 +164,16 @@ export default function MovieListPage() {
                 )}
               </div>
             </div>
-            <div className="row" style={{ height: "400px" }}>
-              <div className="col-12 ">
+            <div className="row">
+              <div className="col-lg-12 col-md-10 ">
                 {selectedMovie ? (
                   <MovieDetails
                     movie={selectedMovie}
-                    maxImageHeight={"350px"}
+                    maxImageHeight={"400px"}
                     onClose={() => setSelectedMovie(null)}
                   ></MovieDetails>
                 ) : (
-                  <>
+                  <div style={{ height: "400px" }}>
                     <br />
                     <br />
                     <h3 className="lead text-uppercase fs-2 light">
@@ -182,27 +181,26 @@ export default function MovieListPage() {
                     </h3>
                     <br />
                     <Searcher
-                      key={"hello"}
                       onSearch={handleOnMovieSearch}
                       textClassName={"search-input-text"}
                       buttonClassName={"search-button text-uppercase"}
                       searchQuery={searchString}
                     ></Searcher>
-                  </>
+                  </div>
                 )}
               </div>
             </div>
           </div>
         </div>
-        <div className="row justify-content-center" style={{ height: "50px" }}>
-          <div className="col-8">
+        <div className="row justify-content-center">
+          <div className="col-lg-8 col-sm-12">
             <GenreSelector
               genreList={GenreListDefault}
               selectedGenre={selectedGenre}
               onSelect={handleOnGenreSelect}
             ></GenreSelector>
           </div>
-          <div className="col-2">
+          <div className="col-lg-2 col-sm-12">
             <SortMovies onSort={handleOnSort} selectClassName=""></SortMovies>
           </div>
         </div>
@@ -210,10 +208,15 @@ export default function MovieListPage() {
           className="row justify-content-center"
           style={{ marginTop: "3px" }}
         >
-          <div className="col-10  fs-5">{filteredMoviesFound()}</div>
+          <div
+            title="movies-counter-found"
+            className="col-lg-10 col-sm-12 fs-5 position-sticky"
+          >
+            {filteredMoviesFound()}
+          </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-10">
+          <div className="col-lg-10 col-sm-12">
             <MovieTile
               movies={moviesList}
               onClick={handleOnClickMovie}
@@ -234,7 +237,7 @@ export default function MovieListPage() {
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-10 ">App</div>
+          <div className="col-lg-10 ">App</div>
         </div>
       </div>
     </>

@@ -44,7 +44,7 @@ export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
             maxWidth: "95%",
             cursor: "pointer",
           }}
-          className=""
+          onClick={() => onClick && onClick(movie)}
           onError={({ currentTarget }) => {
             currentTarget.onError = null;
             currentTarget.src = "images/unavailable-image.jpg";

@@ -10,7 +10,7 @@ describe("Run main App", () => {
     );
   });
 
-  const path = "./src/tests/integration-tests/screenshots/";
+  const path = "./src/tests/integration-tests/screenshots/l1-";
   it("When click + and - button Then result must change", async () => {
     await $("button=+").click();
 

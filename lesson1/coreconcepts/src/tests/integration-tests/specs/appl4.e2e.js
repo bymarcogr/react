@@ -10,7 +10,7 @@ describe("Run fourth lesson App", () => {
     );
   });
 
-  const path = "./src/tests/integration-tests/screenshots/";
+  const path = "./src/tests/integration-tests/screenshots/l4-";
   it("When click Show Generic Dialog should display modal and Close", async () => {
     await $("aria/btn-show-dialog").click();
 
