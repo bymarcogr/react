@@ -1,31 +1,19 @@
 export class MovieInfo {
   id;
-  image_url;
-  name = "New Movie";
-  release_year;
+  title = "New Movie";
+  tagline;
+  vote_average;
+  vote_count;
+  release_date = new Date();
+  poster_path;
+  overview;
   genres = [];
-  rating;
-  duration;
-  description;
+  budget;
+  revenue;
+  runtime;
 
-  constructor(
-    id,
-    name,
-    release_year,
-    image_url,
-    genres,
-    rating,
-    duration,
-    description
-  ) {
-    this.id = id;
-    this.name = name;
-    this.release_year = release_year;
-    this.image_url = image_url;
-    this.genres = genres;
-    this.rating = rating;
-    this.duration = duration;
-    this.description = description;
+  constructor(obj) {
+    obj && Object.assign(this, obj);
   }
 
   get formatedGenres() {
@@ -40,17 +28,17 @@ export class MovieInfo {
   }
 
   get formatedDuration() {
-    const minutes = this.duration % 60;
-    const hours = Math.floor(this.duration / 60);
+    const minutes = this.runtime % 60;
+    const hours = Math.floor(this.runtime / 60);
 
     return `${hours}h ${minutes}m`;
   }
 
   get formatedDate() {
-    if (this.release_year == null || this.genres.release_year === 0) {
+    if (this.release_date == null || this.genres.release_date === 0) {
       return "";
     }
-
-    return this.release_year + "-01-01";
+    let formatDate = new Date(this.release_date);
+    return formatDate.getFullYear();
   }
 }

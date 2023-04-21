@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Searcher from "./searcher";
 import MovieDetails from "./movieDetails";
@@ -7,19 +7,22 @@ import MovieTile from "./movieTile";
 import SortMovies from "./sortMovies";
 import DeleteMovieDialog from "./deleteMovieDialog";
 import GenreSelector from "./genreSelector";
+import { MovieInfo } from "../models/movieInfo";
 
-import { MoviesListDefault } from "../models/moviesListDefault";
 import { GenreListDefault } from "../models/genreListDefault";
+import Axios from "axios";
 
 export default function MovieListPage() {
-  const [selectedMovie, setSelectedMovie] = useState();
   const [isAddMovieOpen, setIsAddMovieOpen] = useState(false);
-  const [moviesList] = useState(MoviesListDefault);
-  const [filteredMovieList, setFilteredMovieList] = useState(MoviesListDefault);
+  const [moviesList, setMoviesList] = useState([]);
   const [editedMovie, setEditedMovie] = useState(null);
   const [deletedMovie, setDeletedMovie] = useState(null);
   const [isDeleteMovieOpen, setIsDeleteMovieOpen] = useState(false);
-  const [selectedGenre, setSelectedGenre] = useState(null);
+
+  const [selectedMovie, setSelectedMovie] = useState();
+  const [searchString, setSearchString] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [sortBy, setSortBy] = useState("");
 
   const handleOnSaveMovie = (e) => {
     const entries = [...new FormData(e.target).entries()];
@@ -36,38 +39,23 @@ export default function MovieListPage() {
     e.preventDefault();
   };
 
-  const handleOnMovieSearch = (searchString) => {
-    let titleSorted = [...moviesList].filter(function (item) {
-      return (
-        item.name.toLowerCase().includes(searchString.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchString.toLowerCase())
-      );
-    });
-    setFilteredMovieList(titleSorted);
+  const handleOnMovieSearch = (searchStr) => {
+    setSearchString(searchStr);
     setSelectedGenre("");
-
-    if (searchString === "") {
-      setFilteredMovieList(null);
-      setSelectedGenre("");
-    }
   };
 
   const handleOnGenreSelect = (selected) => {
     if (selected === selectedGenre) {
-      setFilteredMovieList([...moviesList]);
       setSelectedGenre("");
       return;
     }
-
-    let titleSorted = [...moviesList].filter(function (item) {
-      return item.genres.includes(selected);
-    });
-    setFilteredMovieList(titleSorted);
     setSelectedGenre(selected);
+    setSearchString("");
   };
 
   const handleOnClickMovie = (movie) => {
     setSelectedMovie(movie);
+    window.scrollTo(0, 0);
   };
 
   const handleOnEditMovie = (movie) => {
@@ -86,40 +74,64 @@ export default function MovieListPage() {
   };
 
   const handleOnSort = (option) => {
-    option === "Title" ? sortByTitle() : sortByYear();
-    setSelectedMovie(null);
-  };
-
-  const sortByTitle = () => {
-    let movies = filteredMovieList ?? moviesList;
-    let titleSorted = [...movies].sort(function (a, b) {
-      return a.name < b.name ? -1 : 1;
-    });
-    setFilteredMovieList(titleSorted);
-  };
-
-  const sortByYear = () => {
-    let movies = filteredMovieList ?? moviesList;
-    let yearSorted = [...movies].sort(function (a, b) {
-      return a.release_year - b.release_year;
-    });
-    setFilteredMovieList(yearSorted);
+    option === "Title" ? setSortBy("title") : setSortBy("release_date");
   };
 
   const filteredMoviesFound = () => {
-    let movies = filteredMovieList ?? moviesList;
+    let movies = moviesList;
     let pluralChar = "s";
-    if (movies.length === 1) {
+    if (movies?.length === 1) {
       pluralChar = "";
     }
 
     return (
       <>
-        <span className="fw-bold">{movies.length}</span>
+        <span className="fw-bold">{movies?.length}</span>
         {" movie" + pluralChar + " found"}
       </>
     );
   };
+
+  const baseUrl = "http://localhost:4000/movies";
+
+  const axiosParams = () => {
+    let params = {};
+
+    params["limit"] = 20;
+
+    if (searchString !== "") {
+      params["search"] = searchString;
+      params["searchBy"] = "title";
+    }
+
+    if (selectedGenre !== "") {
+      params["search"] = selectedGenre;
+      params["searchBy"] = "genres";
+    }
+
+    if (sortBy !== "") {
+      params["sortBy"] = sortBy;
+      params["sortOrder"] = "asc";
+    }
+
+    return params;
+  };
+
+  useEffect(() => {
+    Axios.get(baseUrl, {
+      params: axiosParams(),
+    })
+      .then((response) => {
+        let movies = [];
+        response?.data?.data.forEach((movie) => {
+          movies.push(new MovieInfo(movie));
+        });
+        setMoviesList([...movies]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [searchString, selectedGenre, sortBy]);
 
   return (
     <>
@@ -154,11 +166,12 @@ export default function MovieListPage() {
               </div>
             </div>
             <div className="row" style={{ height: "400px" }}>
-              <div className="col-11 ">
+              <div className="col-12 ">
                 {selectedMovie ? (
                   <MovieDetails
                     movie={selectedMovie}
                     maxImageHeight={"350px"}
+                    onClose={() => setSelectedMovie(null)}
                   ></MovieDetails>
                 ) : (
                   <>
@@ -173,6 +186,7 @@ export default function MovieListPage() {
                       onSearch={handleOnMovieSearch}
                       textClassName={"search-input-text"}
                       buttonClassName={"search-button text-uppercase"}
+                      searchQuery={searchString}
                     ></Searcher>
                   </>
                 )}
@@ -201,7 +215,7 @@ export default function MovieListPage() {
         <div className="row justify-content-center">
           <div className="col-10">
             <MovieTile
-              movies={filteredMovieList ?? moviesList}
+              movies={moviesList}
               onClick={handleOnClickMovie}
               onEdit={handleOnEditMovie}
               onDelete={handleOnDeleteMovie}

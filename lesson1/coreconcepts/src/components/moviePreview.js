@@ -15,8 +15,10 @@ export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
           maxHeight: 500,
           maxWidth: 350,
           margin: 5,
+          cursor: "pointer",
         }}
         title={`movie-${movie.id}`}
+        onClick={() => onClick && onClick(movie)}
       >
         <DropdownButton
           title="⋮"
@@ -35,10 +37,18 @@ export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
         </DropdownButton>
         <img
           title={`img-preview-movie-${movie.id}`}
-          src={movie.image_url}
-          alt={movie.name}
-          style={{ maxHeight: "90%", maxWidth: "95%", cursor: "pointer" }}
-          onClick={() => onClick && onClick(movie)}
+          src={movie.poster_path}
+          alt={movie.title}
+          style={{
+            maxHeight: "90%",
+            maxWidth: "95%",
+            cursor: "pointer",
+          }}
+          className=""
+          onError={({ currentTarget }) => {
+            currentTarget.onError = null;
+            currentTarget.src = "images/unavailable-image.jpg";
+          }}
         />
 
         <div
@@ -47,10 +57,10 @@ export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
           className="text-bg-dark position-absolute bottom-0 p-4 "
           onClick={() => onClick && onClick(movie)}
         >
-          <div className="position-absolute top-0 start-0">{movie.name}</div>
+          <div className="position-absolute top-0 start-0">{movie.title}</div>
           <div className="position-absolute top-0 end-0">
             <span className="badge rounded-pill bg-secondary">
-              {movie.release_year}
+              {movie.formatedDate}
             </span>
           </div>
           <div className="position-absolute top-2 start-0">
@@ -73,6 +83,6 @@ MoviePreview.propTypes = {
 };
 
 MoviePreview.defaultProps = {
-  movie: null,
+  movie: new MovieInfo(),
   onClick: () => console.log("on click"),
 };

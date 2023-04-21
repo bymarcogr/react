@@ -28,14 +28,20 @@ export default function MoviesContainer(props) {
 
   const sortByYear = () => {
     let yearSorted = [...moviesList].sort(function (a, b) {
-      return a.release_year - b.release_year;
+      return a.release_date - b.release_date;
     });
     setMoviesList(yearSorted);
   };
 
+  const handleOnClose = () => {
+    setSelectedMovie(null);
+  };
   return (
     <div className="container-fluid bg-black">
-      <MovieDetails movie={selectedMovie}></MovieDetails>
+      <MovieDetails
+        movie={selectedMovie}
+        onClose={handleOnClose}
+      ></MovieDetails>
       <MovieTile movies={moviesList} onClick={handleOnClick}>
         <SortMovies
           onSort={handleOnSort}
