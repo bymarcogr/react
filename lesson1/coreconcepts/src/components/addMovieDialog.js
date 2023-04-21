@@ -34,7 +34,7 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
                   name="title"
                   className="form-input-text"
                   placeholder="Title"
-                  defaultValue={movie?.name}
+                  defaultValue={movie?.title}
                 />
               </div>
               <div className="col-md-5 col-sm-12">
@@ -46,7 +46,7 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
                   name="release_date"
                   placeholder="Release Date"
                   className="form-input-text"
-                  defaultValue={movie?.formatedDate}
+                  defaultValue={movie?.release_date}
                 />
               </div>
             </div>
@@ -58,7 +58,7 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
                   name="url"
                   className="form-input-text"
                   placeholder="https://"
-                  defaultValue={movie?.image_url}
+                  defaultValue={movie?.poster_path}
                 />
               </div>
               <div className="col-md-5 col-sm-12">
@@ -68,7 +68,7 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
                   name="rating"
                   className="form-input-text"
                   placeholder="7.8"
-                  defaultValue={movie?.rating}
+                  defaultValue={movie?.vote_average}
                   min={0}
                   max={10}
                 />
@@ -102,7 +102,7 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
                   name="runtime"
                   className="form-input-text"
                   placeholder="minutes"
-                  defaultValue={movie?.duration}
+                  defaultValue={movie?.runtime}
                   min={0}
                 />
               </div>
@@ -116,7 +116,7 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
                   rows={4}
                   maxLength={1024}
                   placeholder="Movie description"
-                  defaultValue={movie?.description}
+                  defaultValue={movie?.overview}
                 />
               </div>
             </div>

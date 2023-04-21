@@ -2,26 +2,32 @@ import React, { useState } from "react";
 import GenericButton from "./genericButton";
 import "../styles/global.css";
 
-export default function GenreSelector(props) {
-  const [selectedGenre, setSelectedGenre] = useState(props.selectedGenre ?? "");
+export default function GenreSelector({
+  selectedGenre,
+  onSelect,
+  genreList,
+  primaryButtonClassName,
+  secondaryButtonClassName,
+}) {
+  const [genreState, setGenreState] = useState(selectedGenre ?? "");
 
   const handleClick = (item) => {
-    setSelectedGenre(item);
-    props.onSelect(item);
+    setGenreState(item);
+    onSelect(item);
   };
 
   return (
     <span>
-      {props.genreList?.map((genre) => (
+      {genreList?.map((genre) => (
         <GenericButton
           key={genre}
           title={genre}
           className={
-            genre === selectedGenre
-              ? props.primaryButtonClassName ?? "netflixBarSelected"
-              : props.secondaryButtonClassName ?? "netflixBar"
+            genre === genreState && selectedGenre !== ""
+              ? primaryButtonClassName ?? "netflixBarSelected"
+              : secondaryButtonClassName ?? "netflixBar"
           }
-          onClick={(e) => handleClick(e.target.innerHTML)}
+          onClick={() => handleClick(genre)}
         ></GenericButton>
       ))}
     </span>

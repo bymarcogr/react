@@ -10,9 +10,9 @@ describe("Run third lesson App", () => {
     );
   });
 
-  const path = "./src/tests/integration-tests/screenshots/";
+  const path = "./src/tests/integration-tests/screenshots/l3-";
   it("When click a movie image Then shows details", async () => {
-    await $("aria/img-preview-movie-14").click();
+    await $("aria/movie-14").click();
 
     await expect($("aria/preview-movie-14")).toExist();
     await browser.saveScreenshot(`${path}T1-ShouldExists-${Date.now()}.png`);

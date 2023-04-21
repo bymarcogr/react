@@ -1,0 +1,3 @@
+[submodule "backend/MoviesAPI.ReactJS"]
+	path = backend/MoviesAPI.ReactJS
+	url = https://github.com/VarvaraZadnepriak/MoviesAPI.ReactJS

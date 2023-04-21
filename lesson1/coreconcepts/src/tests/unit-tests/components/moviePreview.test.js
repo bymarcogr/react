@@ -9,8 +9,8 @@ describe("MoviePreview", () => {
   test("When prop movie is defined, Should display values", () => {
     render(<MoviePreview movie={movie} />);
     const expectedMovie = screen.getByTitle("movie-16");
-    expect(expectedMovie).toHaveTextContent(movie.name);
-    expect(expectedMovie).toHaveTextContent(movie.release_year);
+    expect(expectedMovie).toHaveTextContent(movie.title);
+    expect(expectedMovie).toHaveTextContent(movie.formatedDate);
     expect(expectedMovie).toHaveTextContent(movie.formatedGenres);
   });
 
@@ -22,16 +22,16 @@ describe("MoviePreview", () => {
       screen.getByText(/Harry Potter and the Deathly Hallows: Part 2/i)
     );
 
-    expect(expectedMovie).toHaveTextContent(movie.name);
-    expect(expectedMovie).toHaveTextContent(movie.release_year);
+    expect(expectedMovie).toHaveTextContent(movie.title);
+    expect(expectedMovie).toHaveTextContent(movie.formatedDate);
     expect(expectedMovie).toHaveTextContent(movie.formatedGenres);
   });
 
   test("When prop movie is defined and onClick null, Should not display values and Not Throw Exception", () => {
     render(<MoviePreview movie={movie} onClick={null} />);
     const expectedMovie = screen.getByTitle("movie-16");
-    expect(expectedMovie).toHaveTextContent(movie.name);
-    expect(expectedMovie).toHaveTextContent(movie.release_year);
+    expect(expectedMovie).toHaveTextContent(movie.title);
+    expect(expectedMovie).toHaveTextContent(movie.formatedDate);
     expect(expectedMovie).toHaveTextContent(movie.formatedGenres);
 
     fireEvent.click(
@@ -49,7 +49,7 @@ describe("MoviePreview", () => {
       screen.getByText(/Harry Potter and the Deathly Hallows: Part 2/i)
     );
 
-    expect(calledItemResponse.name).toBe(movie.name);
+    expect(calledItemResponse.title).toBe(movie.title);
   });
 
   test("When prop movie is defined, Click on image should get the movie", () => {
@@ -60,20 +60,20 @@ describe("MoviePreview", () => {
 
     fireEvent.click(screen.getByTitle("img-preview-movie-16"));
 
-    expect(calledItemResponse.name).toBe(movie.name);
+    expect(calledItemResponse.title).toBe(movie.title);
   });
 
   test("When prop movie is not defined, Should not display values", () => {
     render(<MoviePreview />);
 
-    const expectedMovie = screen.queryByText(movie.name);
+    const expectedMovie = screen.queryByText(movie.title);
     expect(expectedMovie).not.toBeInTheDocument();
   });
 
   test("When prop movie is null, Should not display values", () => {
     render(<MoviePreview movie={null} />);
 
-    const expectedMovie = screen.queryByText(movie.name);
+    const expectedMovie = screen.queryByText(movie.title);
     expect(expectedMovie).not.toBeInTheDocument();
   });
 });

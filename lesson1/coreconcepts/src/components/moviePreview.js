@@ -6,7 +6,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 
 import { MovieInfo } from "../models/movieInfo";
 
-export default function MoviePreview({ movie, onClick }) {
+export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
   return (
     movie && (
       <div
@@ -15,8 +15,10 @@ export default function MoviePreview({ movie, onClick }) {
           maxHeight: 500,
           maxWidth: 350,
           margin: 5,
+          cursor: "pointer",
         }}
         title={`movie-${movie.id}`}
+        onClick={() => onClick && onClick(movie)}
       >
         <DropdownButton
           title="⋮"
@@ -26,15 +28,27 @@ export default function MoviePreview({ movie, onClick }) {
           variant="light"
           bsPrefix={`prefix-movie-${movie.id}`}
         >
-          <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-          <Dropdown.Item eventKey="2">Delete</Dropdown.Item>
+          <Dropdown.Item eventKey="1" onClick={() => onEdit(movie)}>
+            Edit
+          </Dropdown.Item>
+          <Dropdown.Item eventKey="2" onClick={() => onDelete(movie.id)}>
+            Delete
+          </Dropdown.Item>
         </DropdownButton>
         <img
           title={`img-preview-movie-${movie.id}`}
-          src={movie.image_url}
-          alt={movie.name}
-          style={{ maxHeight: "90%", maxWidth: "95%", cursor: "pointer" }}
+          src={movie.poster_path}
+          alt={movie.title}
+          style={{
+            maxHeight: "90%",
+            maxWidth: "95%",
+            cursor: "pointer",
+          }}
           onClick={() => onClick && onClick(movie)}
+          onError={({ currentTarget }) => {
+            currentTarget.onError = null;
+            currentTarget.src = "images/unavailable-image.jpg";
+          }}
         />
 
         <div
@@ -43,10 +57,10 @@ export default function MoviePreview({ movie, onClick }) {
           className="text-bg-dark position-absolute bottom-0 p-4 "
           onClick={() => onClick && onClick(movie)}
         >
-          <div className="position-absolute top-0 start-0">{movie.name}</div>
+          <div className="position-absolute top-0 start-0">{movie.title}</div>
           <div className="position-absolute top-0 end-0">
             <span className="badge rounded-pill bg-secondary">
-              {movie.release_year}
+              {movie.formatedDate}
             </span>
           </div>
           <div className="position-absolute top-2 start-0">
@@ -69,6 +83,6 @@ MoviePreview.propTypes = {
 };
 
 MoviePreview.defaultProps = {
-  movie: null,
+  movie: new MovieInfo(),
   onClick: () => console.log("on click"),
 };
