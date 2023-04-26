@@ -1,6 +1,6 @@
 describe("Run third lesson App", () => {
   beforeEach(async () => {
-    await browser.url("lesson3");
+    await browser.url("lesson/3");
     await browser.waitUntil(
       () => browser.execute(() => document.readyState === "complete"),
       {
