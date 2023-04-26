@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useState } from "react";
 import {
   useSearchParams,
-  Outlet,
   useNavigate,
   createSearchParams,
 } from "react-router-dom";

@@ -13,7 +13,7 @@ import MovieDetails from "./movieDetails";
 import Axios from "axios";
 
 export default function MovieDetailsWrapper() {
-  const [searchParams, setSearchParams] = useSearchParams({});
+  const [searchParams] = useSearchParams({});
   const [selectedMovie, setSelectedMovie] = useState();
   const { config } = useContext(AppContext);
   const baseUrl = config.url;
