@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { Link, useSearchParams, Outlet } from "react-router-dom";
 
 import Searcher from "./searcher";
 import MovieDetails from "./movieDetails";
@@ -15,6 +16,7 @@ import Axios from "axios";
 const baseUrl = "http://localhost:4000/movies";
 
 export default function MovieListPage() {
+  const [searchParams, setSearchParams] = useSearchParams({});
   const [isAddMovieOpen, setIsAddMovieOpen] = useState(false);
   const [moviesList, setMoviesList] = useState([]);
   const [editedMovie, setEditedMovie] = useState(null);
@@ -22,9 +24,13 @@ export default function MovieListPage() {
   const [isDeleteMovieOpen, setIsDeleteMovieOpen] = useState(false);
 
   const [selectedMovie, setSelectedMovie] = useState();
-  const [searchString, setSearchString] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const [sortBy, setSortBy] = useState("");
+  const [searchString, setSearchString] = useState(
+    searchParams.get("searchBy") === "title" ? searchParams.get("search") : ""
+  );
+  const [selectedGenre, setSelectedGenre] = useState(
+    searchParams.get("searchBy") === "genres" ? searchParams.get("search") : ""
+  );
+  const [sortBy, setSortBy] = useState(searchParams.get("sortBy") ?? "");
 
   const handleOnSaveMovie = (e) => {
     const entries = [...new FormData(e.target).entries()];
@@ -97,8 +103,6 @@ export default function MovieListPage() {
   const axiosParams = useCallback(() => {
     let params = {};
 
-    params["limit"] = 20;
-
     if (searchString !== "") {
       params["search"] = searchString;
       params["searchBy"] = "title";
@@ -107,11 +111,12 @@ export default function MovieListPage() {
     if (selectedGenre !== "") {
       params["search"] = selectedGenre;
       params["searchBy"] = "genres";
-      params["sortBy"] = "title";
     }
 
     params["sortBy"] = sortBy !== "" ? sortBy : "title";
     params["sortOrder"] = "asc";
+    params["limit"] = 20;
+    setSearchParams(params);
 
     return params;
   }, [searchString, selectedGenre, sortBy]);

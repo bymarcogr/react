@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import FirstLessonApp from "./components/firstLessonApp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import reportWebVitals from "./reportWebVitals";
-import ThirdLessonApp from "./components/thirdLessonApp";
-import FourthLessonApp from "./components/fourthLessonApp";
-import FifthLessonApp from "./components/fifthLessonApp";
+import MovieListPage from "./components/movieListPage";
+import LessonMenu from "./components/lessonMenu";
+import Searcher from "./components/searcher";
+import MovieDetails from "./components/movieDetails";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,42 +15,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <ul>
-              <br />
-              <li>
-                <Link to="lesson1" target="_blank">
-                  Core Concepts
-                </Link>
-              </li>
-              <br />
-              <li>
-                <Link to="lesson3" target="_blank">
-                  Components
-                </Link>
-              </li>
-              <br />
-              <li>
-                <Link to="lesson4" target="_blank">
-                  Advanced Components
-                </Link>
-              </li>
-              <br />
-              <li>
-                <Link to="lesson5" target="_blank">
-                  Hooks
-                </Link>
-              </li>
-            </ul>
-          }
-        ></Route>
-        <Route exact path="/lesson1" element={<FirstLessonApp />}></Route>
-        <Route exact path="/lesson3" element={<ThirdLessonApp />}></Route>
-        <Route exact path="/lesson4" element={<FourthLessonApp />}></Route>
-        <Route exact path="/lesson5" element={<FifthLessonApp />}></Route>
+        <Route path="/" element={<MovieListPage />}>
+          <Route path="" element={<Searcher />} />
+          <Route path=":movieid" element={<MovieDetails />} />
+        </Route>
+        <Route path="lesson/*" element={<LessonMenu />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
