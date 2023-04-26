@@ -44,24 +44,40 @@ exports[`renders correctly 1`] = `
     Search Component
   </h1>
   <br />
-  <span>
-    <input
-      className="search"
-      onChange={[Function]}
-      onKeyDown={[Function]}
-      placeholder="What do you want to watch?"
-      type="text"
-      value="Search String?"
-    />
+  <div
+    style={
+      Object {
+        "height": "400px",
+      }
+    }
+  >
+    <br />
+    <br />
+    <h3
+      className="lead text-uppercase fs-2 light"
+    >
+      Find your Movie
+    </h3>
+    <br />
     <span>
-      <button
-        className="netflixSearch"
-        onClick={[Function]}
-      >
-        Search
-      </button>
+      <input
+        className="search"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="What do you want to watch?"
+        type="text"
+        value="Search String?"
+      />
+      <span>
+        <button
+          className="netflixSearch"
+          onClick={[Function]}
+        >
+          Search
+        </button>
+      </span>
     </span>
-  </span>
+  </div>
   <h1
     className="title"
   >

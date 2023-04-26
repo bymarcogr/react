@@ -37,7 +37,7 @@ export default function MovieDetails({
               }}
               onError={({ currentTarget }) => {
                 currentTarget.onError = null;
-                currentTarget.src = "images/unavailable-image.jpg";
+                currentTarget.src = "/images/unavailable-image.jpg";
               }}
             />
           </div>
