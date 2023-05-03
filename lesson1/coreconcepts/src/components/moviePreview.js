@@ -47,7 +47,7 @@ export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
           onClick={() => onClick && onClick(movie)}
           onError={({ currentTarget }) => {
             currentTarget.onError = null;
-            currentTarget.src = "images/unavailable-image.jpg";
+            currentTarget.src = "/images/unavailable-image.jpg";
           }}
         />
 

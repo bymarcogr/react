@@ -17,21 +17,28 @@ export default function Searcher({
   };
 
   return (
-    <span>
-      <input
-        type={"text"}
-        placeholder={"What do you want to watch?"}
-        value={searchQueryState}
-        onKeyDown={(e) => handleKeyDown(e)}
-        onChange={(e) => setSearchQueryState(e.target.value)}
-        className={textClassName ?? "search"}
-      ></input>
-      <GenericButton
-        title={"Search"}
-        onClick={() => onSearch(searchQueryState)}
-        className={buttonClassName ?? "netflixSearch"}
-      ></GenericButton>
-    </span>
+
+    <div style={{ height: "400px" }}>
+      <br />
+      <br />
+      <h3 className="lead text-uppercase fs-2 light">{"Find your Movie"}</h3>
+      <br />
+      <span>
+        <input
+          type={"text"}
+          placeholder={"What do you want to watch?"}
+          value={searchQueryState}
+          onKeyDown={(e) => handleKeyDown(e)}
+          onChange={(e) => setSearchQueryState(e.target.value)}
+          className={textClassName ?? "search"}
+        ></input>
+        <GenericButton
+          title={"Search"}
+          onClick={() => onSearch(searchQueryState)}
+          className={buttonClassName ?? "netflixSearch"}
+        ></GenericButton>
+      </span>
+    </div>
   );
 }
 

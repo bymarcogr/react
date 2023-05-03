@@ -20,12 +20,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+NOTE: Backend module is store in `backend\MoviesAPI.ReactJS` directory, go there and run `npm start`, Open [http://localhost:4000/api-docs](http://localhost:4000/api-docs) to view swagger in the browser
+
 In the project directory, you can run:
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+- Open [http://localhost:3000](http://localhost:3000) to view main app in the browser.
+- Open [http://localhost:3000/lesson](http://localhost:3000/lesson) to view each lessons apps in the browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

@@ -1,30 +1,40 @@
-import React, { useState, useEffect, useCallback } from "react";
-
-import Searcher from "./searcher";
-import MovieDetails from "./movieDetails";
+import React, { useState, useEffect, useContext } from "react";
+import {
+  useSearchParams,
+  Outlet,
+  useNavigate,
+  createSearchParams,
+} from "react-router-dom";
 import AddMovieDialog from "./addMovieDialog";
 import MovieTile from "./movieTile";
 import SortMovies from "./sortMovies";
 import DeleteMovieDialog from "./deleteMovieDialog";
 import GenreSelector from "./genreSelector";
 import { MovieInfo } from "../models/movieInfo";
+import { AppContext } from "../../src/App";
 
 import { GenreListDefault } from "../models/genreListDefault";
 import Axios from "axios";
 
-const baseUrl = "http://localhost:4000/movies";
-
 export default function MovieListPage() {
+  const { config } = useContext(AppContext);
+  const baseUrl = config.url;
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams({});
   const [isAddMovieOpen, setIsAddMovieOpen] = useState(false);
   const [moviesList, setMoviesList] = useState([]);
   const [editedMovie, setEditedMovie] = useState(null);
   const [deletedMovie, setDeletedMovie] = useState(null);
   const [isDeleteMovieOpen, setIsDeleteMovieOpen] = useState(false);
 
-  const [selectedMovie, setSelectedMovie] = useState();
-  const [searchString, setSearchString] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const [sortBy, setSortBy] = useState("");
+  const [searchString, setSearchString] = useState(
+    searchParams.get("searchBy") === "title" ? searchParams.get("search") : ""
+  );
+  const [selectedGenre, setSelectedGenre] = useState(
+    searchParams.get("searchBy") === "genres" ? searchParams.get("search") : ""
+  );
+  const [sortBy, setSortBy] = useState(searchParams.get("sortBy") ?? "");
+
 
   const handleOnSaveMovie = (e) => {
     const entries = [...new FormData(e.target).entries()];
@@ -41,10 +51,6 @@ export default function MovieListPage() {
     e.preventDefault();
   };
 
-  const handleOnMovieSearch = (searchStr) => {
-    setSearchString(searchStr);
-    setSelectedGenre("");
-  };
 
   const handleOnGenreSelect = (selected) => {
     if (selected === selectedGenre) {
@@ -56,7 +62,7 @@ export default function MovieListPage() {
   };
 
   const handleOnClickMovie = (movie) => {
-    setSelectedMovie(movie);
+    navigate(`/${movie.id}/?${createSearchParams(searchParams).toString()}`);
     window.scrollTo(0, 0);
   };
 
@@ -94,10 +100,8 @@ export default function MovieListPage() {
     );
   };
 
-  const axiosParams = useCallback(() => {
+  const axiosParams = () => {
     let params = {};
-
-    params["limit"] = 20;
 
     if (searchString !== "") {
       params["search"] = searchString;
@@ -107,14 +111,15 @@ export default function MovieListPage() {
     if (selectedGenre !== "") {
       params["search"] = selectedGenre;
       params["searchBy"] = "genres";
-      params["sortBy"] = "title";
     }
 
     params["sortBy"] = sortBy !== "" ? sortBy : "title";
     params["sortOrder"] = "asc";
+    params["limit"] = 20;
+    setSearchParams(params);
 
     return params;
-  }, [searchString, selectedGenre, sortBy]);
+  };
 
   useEffect(() => {
     Axios.get(baseUrl, {
@@ -166,28 +171,7 @@ export default function MovieListPage() {
             </div>
             <div className="row">
               <div className="col-lg-12 col-md-10 ">
-                {selectedMovie ? (
-                  <MovieDetails
-                    movie={selectedMovie}
-                    maxImageHeight={"400px"}
-                    onClose={() => setSelectedMovie(null)}
-                  ></MovieDetails>
-                ) : (
-                  <div style={{ height: "400px" }}>
-                    <br />
-                    <br />
-                    <h3 className="lead text-uppercase fs-2 light">
-                      {"Find your Movie"}
-                    </h3>
-                    <br />
-                    <Searcher
-                      onSearch={handleOnMovieSearch}
-                      textClassName={"search-input-text"}
-                      buttonClassName={"search-button text-uppercase"}
-                      searchQuery={searchString}
-                    ></Searcher>
-                  </div>
-                )}
+                <Outlet />
               </div>
             </div>
           </div>
