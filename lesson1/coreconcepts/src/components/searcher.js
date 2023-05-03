@@ -17,6 +17,7 @@ export default function Searcher({
   };
 
   return (
+
     <div style={{ height: "400px" }}>
       <br />
       <br />

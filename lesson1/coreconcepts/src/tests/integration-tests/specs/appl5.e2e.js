@@ -11,6 +11,18 @@ describe("Run fifth lesson App", () => {
   });
 
   const path = "./src/tests/integration-tests/screenshots/l5-";
+  it("When Click Search shows only Star Wars Movies", async () => {
+    const inputText = "Star Wars";
+
+    await $('[class="search-input-text"]').setValue(inputText);
+    await $("button=Search").click();
+
+    await browser.saveScreenshot(`${path}T1-ShouldExists-${Date.now()}.png`);
+
+    await expect($("aria/img-preview-movie-181808")).toExist();
+    await expect($("aria/img-preview-movie-140607")).toExist();
+    await expect($("aria/img-preview-movie-11")).toExist();
+  });
 
   it("When click Documentary genre button Then show 13 movies", async () => {
     await $("button=Documentary").click();

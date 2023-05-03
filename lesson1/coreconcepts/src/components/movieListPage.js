@@ -5,7 +5,6 @@ import {
   useNavigate,
   createSearchParams,
 } from "react-router-dom";
-
 import AddMovieDialog from "./addMovieDialog";
 import MovieTile from "./movieTile";
 import SortMovies from "./sortMovies";
@@ -21,13 +20,13 @@ export default function MovieListPage() {
   const { config } = useContext(AppContext);
   const baseUrl = config.url;
   const navigate = useNavigate();
-
   const [searchParams, setSearchParams] = useSearchParams({});
   const [isAddMovieOpen, setIsAddMovieOpen] = useState(false);
   const [moviesList, setMoviesList] = useState([]);
   const [editedMovie, setEditedMovie] = useState(null);
   const [deletedMovie, setDeletedMovie] = useState(null);
   const [isDeleteMovieOpen, setIsDeleteMovieOpen] = useState(false);
+
   const [searchString, setSearchString] = useState(
     searchParams.get("searchBy") === "title" ? searchParams.get("search") : ""
   );
@@ -35,6 +34,7 @@ export default function MovieListPage() {
     searchParams.get("searchBy") === "genres" ? searchParams.get("search") : ""
   );
   const [sortBy, setSortBy] = useState(searchParams.get("sortBy") ?? "");
+
 
   const handleOnSaveMovie = (e) => {
     const entries = [...new FormData(e.target).entries()];
@@ -50,6 +50,7 @@ export default function MovieListPage() {
     console.log(formObject);
     e.preventDefault();
   };
+
 
   const handleOnGenreSelect = (selected) => {
     if (selected === selectedGenre) {
@@ -119,6 +120,7 @@ export default function MovieListPage() {
 
     return params;
   };
+
   useEffect(() => {
     Axios.get(baseUrl, {
       params: axiosParams(),
