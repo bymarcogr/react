@@ -2,15 +2,15 @@ export class MovieInfo {
   id;
   title = "New Movie";
   tagline;
-  vote_average;
-  vote_count;
+  vote_average = 0;
+  vote_count = 0;
   release_date = new Date();
   poster_path;
-  overview;
+  overview = 0;
   genres = [];
   budget;
   revenue;
-  runtime;
+  runtime = 0;
 
   constructor(obj) {
     obj && Object.assign(this, obj);

@@ -6,6 +6,7 @@ import {
   useNavigate,
   createSearchParams,
 } from "react-router-dom";
+import { MovieInfo } from "../models/movieInfo";
 import { AppContext } from "../../src/App";
 import Axios from "axios";
 
@@ -20,27 +21,68 @@ export default function AddMovieForm({ isOpen }) {
   const { config } = useContext(AppContext);
   const baseUrl = config.url;
 
-  const handleOnSaveMovie = (e) => {
-    const entries = [...new FormData(e.target).entries()];
-    let newGenres = [];
-    entries.forEach((i) => {
-      if (i[0] === "genre") {
-        newGenres.push(i[1]);
-      }
-    });
+  const isNew = () => {
+    return movieId == null;
+  };
 
-    let formObject = Object.fromEntries(entries);
-    formObject.genre = [...newGenres];
-    console.log(formObject);
-    e.preventDefault();
+  const handleOnSubmit = (data) => {
+    if (isNew()) {
+      handleOnSaveMovie(data);
+    } else {
+      handleOnUpdateMovie(data);
+    }
+  };
+  const handleOnSaveMovie = (data) => {
+    console.log(data);
+    const movie = new MovieInfo(data);
+    var customConfig = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    Axios.post(`${baseUrl}`, movie, customConfig)
+      .then((response) => {
+        console.log(response);
+        navigate(
+          `/${response?.data?.id}/?${createSearchParams(
+            searchParams
+          ).toString()}`
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleOnUpdateMovie = (data) => {
+    console.log(data);
+    const movie = new MovieInfo(data);
+    var customConfig = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    Axios.put(`${baseUrl}`, movie, customConfig)
+      .then((response) => {
+        console.log(response);
+        navigate(
+          `/${response?.data?.id}/?${createSearchParams(
+            searchParams
+          ).toString()}`
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
     Axios.get(`${baseUrl}/${movieId}`)
       .then((response) => {
         console.log(response);
-        let movie = response?.data;
+        const movie = new MovieInfo(response?.data);
         setSelectedMovie(movie);
+        console.log(movie);
       })
       .catch((error) => {
         console.log(error);
@@ -56,7 +98,7 @@ export default function AddMovieForm({ isOpen }) {
           navigate(`/?${createSearchParams(searchParams).toString()}`);
           window.scrollTo(0, 0);
         }}
-        onSubmit={handleOnSaveMovie}
+        onSubmit={handleOnSubmit}
         movie={selectedMovie}
       />
     </>
