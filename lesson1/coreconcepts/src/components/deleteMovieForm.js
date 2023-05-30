@@ -22,7 +22,6 @@ export default function DeleteMovieForm({ isOpen }) {
   const baseUrl = config.url;
 
   const handleOnSubmitDeleteMovie = (e, movieId) => {
-    console.log(movieId);
     Axios.delete(`${baseUrl}/${movieId}`)
       .then((response) => {
         console.log("movie deleted", response.status);

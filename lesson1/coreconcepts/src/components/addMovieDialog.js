@@ -113,7 +113,6 @@ export default function AddMovieDialog({ isOpen, onClose, movie, onSubmit }) {
                   placeholder="Select Genre"
                   multiple={true}
                   size={2}
-                  value={movie?.genres}
                   onChange={(e) => console.log(e.target.value)}
                   {...register("genres", { required: true })}
                 >

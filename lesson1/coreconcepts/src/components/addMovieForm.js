@@ -33,7 +33,6 @@ export default function AddMovieForm({ isOpen }) {
     }
   };
   const handleOnSaveMovie = (data) => {
-    console.log(data);
     const movie = new MovieInfo(data);
     var customConfig = {
       headers: {
@@ -42,7 +41,6 @@ export default function AddMovieForm({ isOpen }) {
     };
     Axios.post(`${baseUrl}`, movie, customConfig)
       .then((response) => {
-        console.log(response);
         navigate(
           `/${response?.data?.id}/?${createSearchParams(
             searchParams
@@ -64,7 +62,6 @@ export default function AddMovieForm({ isOpen }) {
     };
     Axios.put(`${baseUrl}`, movie, customConfig)
       .then((response) => {
-        console.log(response);
         navigate(
           `/${response?.data?.id}/?${createSearchParams(
             searchParams
@@ -79,10 +76,8 @@ export default function AddMovieForm({ isOpen }) {
   useEffect(() => {
     Axios.get(`${baseUrl}/${movieId}`)
       .then((response) => {
-        console.log(response);
         const movie = new MovieInfo(response?.data);
         setSelectedMovie(movie);
-        console.log(movie);
       })
       .catch((error) => {
         console.log(error);

@@ -52,21 +52,24 @@ describe("ShowDemoDialog", () => {
     expect(calledOnClose).toBe(true);
   });
 
-  test("When Click onSubmit, Should call handleOnSubmit", () => {
+  test("When Click onSubmit, Should not call handleOnSubmit due to error on inputs", () => {
     let calledOnSubmit = null;
-    const handleOnSubmit = (e) => (calledOnSubmit = e);
+    const handleOnSubmit = (data) => {
+      calledOnSubmit = data;
+    };
 
     render(
       <AddMovieDialog
         isOpen={true}
         onClose={() => {}}
         onSubmit={handleOnSubmit}
+        movie={null}
       />
     );
 
     fireEvent.click(screen.getByTitle("btn-submit-add-movie"));
 
-    expect(calledOnSubmit).not.toBe(null);
+    expect(calledOnSubmit).toBe(null);
   });
 
   test("When prop movie is send, Should display Edit Movie Dialog", () => {
