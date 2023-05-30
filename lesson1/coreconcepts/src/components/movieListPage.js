@@ -5,10 +5,8 @@ import {
   useNavigate,
   createSearchParams,
 } from "react-router-dom";
-import AddMovieDialog from "./addMovieDialog";
 import MovieTile from "./movieTile";
 import SortMovies from "./sortMovies";
-import DeleteMovieDialog from "./deleteMovieDialog";
 import GenreSelector from "./genreSelector";
 import { MovieInfo } from "../models/movieInfo";
 import { AppContext } from "../../src/App";
@@ -21,11 +19,7 @@ export default function MovieListPage() {
   const baseUrl = config.url;
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
-  const [isAddMovieOpen, setIsAddMovieOpen] = useState(false);
   const [moviesList, setMoviesList] = useState([]);
-  const [editedMovie, setEditedMovie] = useState(null);
-  const [deletedMovie, setDeletedMovie] = useState(null);
-  const [isDeleteMovieOpen, setIsDeleteMovieOpen] = useState(false);
 
   const [searchString, setSearchString] = useState(
     searchParams.get("searchBy") === "title" ? searchParams.get("search") : ""
@@ -34,23 +28,6 @@ export default function MovieListPage() {
     searchParams.get("searchBy") === "genres" ? searchParams.get("search") : ""
   );
   const [sortBy, setSortBy] = useState(searchParams.get("sortBy") ?? "");
-
-
-  const handleOnSaveMovie = (e) => {
-    const entries = [...new FormData(e.target).entries()];
-    let newGenres = [];
-    entries.forEach((i) => {
-      if (i[0] === "genre") {
-        newGenres.push(i[1]);
-      }
-    });
-
-    let formObject = Object.fromEntries(entries);
-    formObject.genre = [...newGenres];
-    console.log(formObject);
-    e.preventDefault();
-  };
-
 
   const handleOnGenreSelect = (selected) => {
     if (selected === selectedGenre) {
@@ -64,21 +41,6 @@ export default function MovieListPage() {
   const handleOnClickMovie = (movie) => {
     navigate(`/${movie.id}/?${createSearchParams(searchParams).toString()}`);
     window.scrollTo(0, 0);
-  };
-
-  const handleOnEditMovie = (movie) => {
-    setEditedMovie(movie);
-    setIsAddMovieOpen(true);
-  };
-
-  const handleOnDeleteMovie = (id) => {
-    setDeletedMovie(id);
-    setIsDeleteMovieOpen(true);
-  };
-
-  const handleOnSubmitDeleteMovie = (e, movieId) => {
-    console.log(movieId);
-    e.preventDefault();
   };
 
   const handleOnSort = (option) => {
@@ -152,21 +114,15 @@ export default function MovieListPage() {
                   type="button"
                   className="add-movie-button text-uppercase fs-6"
                   title="btn-add-movie"
-                  onClick={() => setIsAddMovieOpen(true)}
+                  onClick={() => {
+                    navigate(
+                      `/new/?${createSearchParams(searchParams).toString()}`
+                    );
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   + Add Movie
                 </button>
-                {isAddMovieOpen && (
-                  <AddMovieDialog
-                    isOpen={true}
-                    onClose={() => {
-                      setIsAddMovieOpen(false);
-                      setEditedMovie(null);
-                    }}
-                    onSubmit={handleOnSaveMovie}
-                    movie={editedMovie}
-                  />
-                )}
               </div>
             </div>
             <div className="row">
@@ -204,20 +160,7 @@ export default function MovieListPage() {
             <MovieTile
               movies={moviesList}
               onClick={handleOnClickMovie}
-              onEdit={handleOnEditMovie}
-              onDelete={handleOnDeleteMovie}
             ></MovieTile>
-            {isDeleteMovieOpen && (
-              <DeleteMovieDialog
-                isOpen={true}
-                onClose={() => {
-                  setIsDeleteMovieOpen(false);
-                  setDeletedMovie(null);
-                }}
-                onSubmit={handleOnSubmitDeleteMovie}
-                movieId={deletedMovie}
-              />
-            )}
           </div>
         </div>
         <div className="row justify-content-center">

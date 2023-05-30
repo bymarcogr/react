@@ -4,26 +4,14 @@ import PropTypes from "prop-types";
 import { MovieInfo } from "../models/movieInfo";
 import MoviePreview from "./moviePreview";
 
-export default function MovieTile({
-  onClick,
-  movies,
-  children,
-  onEdit,
-  onDelete,
-}) {
+export default function MovieTile({ onClick, movies, children }) {
   return (
     <>
       {children}
       <div className="row text-center">
         {movies?.map((movie) => {
           return (
-            <MoviePreview
-              key={movie.id}
-              movie={movie}
-              onClick={onClick}
-              onEdit={onEdit}
-              onDelete={onDelete}
-            />
+            <MoviePreview key={movie.id} movie={movie} onClick={onClick} />
           );
         })}
       </div>

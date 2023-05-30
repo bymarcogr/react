@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   useSearchParams,
   useNavigate,
+  Outlet,
   createSearchParams,
 } from "react-router-dom";
 
@@ -39,11 +40,14 @@ export default function SearcherWrapper() {
   };
 
   return (
-    <Searcher
-      onSearch={handleOnMovieSearch}
-      textClassName={"search-input-text"}
-      buttonClassName={"search-button text-uppercase"}
-      searchQuery={searchString}
-    ></Searcher>
+    <>
+      <Outlet />
+      <Searcher
+        onSearch={handleOnMovieSearch}
+        textClassName={"search-input-text"}
+        buttonClassName={"search-button text-uppercase"}
+        searchQuery={searchString}
+      ></Searcher>
+    </>
   );
 }

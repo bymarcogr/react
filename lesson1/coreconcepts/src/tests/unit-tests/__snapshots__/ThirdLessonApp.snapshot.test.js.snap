@@ -48,10 +48,8 @@ Array [
       >
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -60,7 +58,7 @@ Array [
           title="movie-1"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-1"
             name="options-movie-1"
           >
@@ -128,10 +126,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -140,7 +136,7 @@ Array [
           title="movie-2"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-2"
             name="options-movie-2"
           >
@@ -208,10 +204,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -220,7 +214,7 @@ Array [
           title="movie-3"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-3"
             name="options-movie-3"
           >
@@ -288,10 +282,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -300,7 +292,7 @@ Array [
           title="movie-4"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-4"
             name="options-movie-4"
           >
@@ -368,10 +360,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -380,7 +370,7 @@ Array [
           title="movie-5"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-5"
             name="options-movie-5"
           >
@@ -448,10 +438,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -460,7 +448,7 @@ Array [
           title="movie-6"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-6"
             name="options-movie-6"
           >
@@ -528,10 +516,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -540,7 +526,7 @@ Array [
           title="movie-7"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-7"
             name="options-movie-7"
           >
@@ -608,10 +594,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -620,7 +604,7 @@ Array [
           title="movie-8"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-8"
             name="options-movie-8"
           >
@@ -688,10 +672,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -700,7 +682,7 @@ Array [
           title="movie-9"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-9"
             name="options-movie-9"
           >
@@ -768,10 +750,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -780,7 +760,7 @@ Array [
           title="movie-10"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-10"
             name="options-movie-10"
           >
@@ -848,10 +828,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -860,7 +838,7 @@ Array [
           title="movie-11"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-11"
             name="options-movie-11"
           >
@@ -928,10 +906,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -940,7 +916,7 @@ Array [
           title="movie-12"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-12"
             name="options-movie-12"
           >
@@ -1008,10 +984,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -1020,7 +994,7 @@ Array [
           title="movie-13"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-13"
             name="options-movie-13"
           >
@@ -1088,10 +1062,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -1100,7 +1072,7 @@ Array [
           title="movie-14"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-14"
             name="options-movie-14"
           >
@@ -1168,10 +1140,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -1180,7 +1150,7 @@ Array [
           title="movie-15"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-15"
             name="options-movie-15"
           >
@@ -1248,10 +1218,8 @@ Array [
         </div>
         <div
           className="col-md-4 col-lg-3 border border-dark rounded-3 position-relative"
-          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
               "margin": 5,
               "maxHeight": 500,
               "maxWidth": 350,
@@ -1260,7 +1228,7 @@ Array [
           title="movie-16"
         >
           <div
-            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary dropdown"
+            className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master dropdown"
             data-testid="options-movie-16"
             name="options-movie-16"
           >
