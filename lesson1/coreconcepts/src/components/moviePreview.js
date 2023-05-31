@@ -6,7 +6,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 
 import { MovieInfo } from "../models/movieInfo";
 
-export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
+export default function MoviePreview({ movie, onClick }) {
   return (
     movie && (
       <div
@@ -15,23 +15,21 @@ export default function MoviePreview({ movie, onClick, onEdit, onDelete }) {
           maxHeight: 500,
           maxWidth: 350,
           margin: 5,
-          cursor: "pointer",
         }}
         title={`movie-${movie.id}`}
-        onClick={() => onClick && onClick(movie)}
       >
         <DropdownButton
           title="⋮"
           data-testid={`options-movie-${movie.id}`}
           name={`options-movie-${movie.id}`}
-          className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary"
+          className="position-absolute end-0 float-end bi bi-three-dots-vertical border border-secondary z-index-master"
           variant="light"
           bsPrefix={`prefix-movie-${movie.id}`}
         >
-          <Dropdown.Item eventKey="1" onClick={() => onEdit(movie)}>
+          <Dropdown.Item eventKey="1" href={`/edit/${movie.id}`}>
             Edit
           </Dropdown.Item>
-          <Dropdown.Item eventKey="2" onClick={() => onDelete(movie.id)}>
+          <Dropdown.Item eventKey="2" href={`/delete/${movie.id}`}>
             Delete
           </Dropdown.Item>
         </DropdownButton>

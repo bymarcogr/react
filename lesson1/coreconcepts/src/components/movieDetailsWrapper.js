@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import { MovieInfo } from "../models/movieInfo";
-import { AppContext } from "../../src/App";
+import { useAppContext } from "./appContext";
 import MovieDetails from "./movieDetails";
 
 import Axios from "axios";
@@ -15,7 +15,7 @@ import Axios from "axios";
 export default function MovieDetailsWrapper() {
   const [searchParams] = useSearchParams({});
   const [selectedMovie, setSelectedMovie] = useState();
-  const { config } = useContext(AppContext);
+  const { config } = useAppContext();
   const baseUrl = config.url;
   const navigate = useNavigate();
 
