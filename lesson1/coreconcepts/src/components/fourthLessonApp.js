@@ -8,12 +8,10 @@ export default function FourthLessonApp() {
 
   const handleOnSubmit = (e) => {
     const entries = [...new FormData(e.target).entries()];
-    let newGenres = [];
-    entries.forEach((i) => {
-      if (i[0] === "genre") {
-        newGenres.push(i[1]);
-      }
-    });
+
+    const newGenres = entries
+      .filter((item) => item[0] === "genre")
+      .map((item) => item[1]);
 
     let formObject = Object.fromEntries(entries);
     formObject.genre = [...newGenres];

@@ -89,9 +89,7 @@ export default function MovieListPage() {
     })
       .then((response) => {
         let movies = [];
-        response?.data?.data.forEach((movie) => {
-          movies.push(new MovieInfo(movie));
-        });
+        movies = response?.data?.data.map((movie) => new MovieInfo(movie));
         setMoviesList([...movies]);
       })
       .catch((error) => {
