@@ -8,7 +8,7 @@ import {
   useNavigate,
   createSearchParams,
 } from "react-router-dom";
-import { AppContext } from "../../src/App";
+import { useAppContext } from "./appContext";
 import Axios from "axios";
 
 export default function DeleteMovieForm({ isOpen }) {
@@ -18,7 +18,7 @@ export default function DeleteMovieForm({ isOpen }) {
   const [searchParams] = useSearchParams({});
   const { movieId } = useParams();
 
-  const { config } = useContext(AppContext);
+  const { config } = useAppContext();
   const baseUrl = config.url;
 
   const handleOnSubmitDeleteMovie = (e, movieId) => {

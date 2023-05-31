@@ -9,13 +9,13 @@ import MovieTile from "./movieTile";
 import SortMovies from "./sortMovies";
 import GenreSelector from "./genreSelector";
 import { MovieInfo } from "../models/movieInfo";
-import { AppContext } from "../../src/App";
+import { useAppContext } from "./appContext";
 
 import { GenreListDefault } from "../models/genreListDefault";
 import Axios from "axios";
 
 export default function MovieListPage() {
-  const { config } = useContext(AppContext);
+  const { config } = useAppContext();
   const baseUrl = config.url;
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});

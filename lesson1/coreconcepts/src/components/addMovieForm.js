@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import AddMovieDialog from "./addMovieDialog";
 import {
   useParams,
@@ -7,7 +7,7 @@ import {
   createSearchParams,
 } from "react-router-dom";
 import { MovieInfo } from "../models/movieInfo";
-import { AppContext } from "../../src/App";
+import { useAppContext } from "./appContext";
 import Axios from "axios";
 
 export default function AddMovieForm({ isOpen }) {
@@ -18,7 +18,7 @@ export default function AddMovieForm({ isOpen }) {
   const [searchParams] = useSearchParams({});
   const { movieId } = useParams();
 
-  const { config } = useContext(AppContext);
+  const { config } = useAppContext();
   const baseUrl = config.url;
 
   const isNew = () => {
@@ -74,14 +74,16 @@ export default function AddMovieForm({ isOpen }) {
   };
 
   useEffect(() => {
-    Axios.get(`${baseUrl}/${movieId}`)
-      .then((response) => {
-        const movie = new MovieInfo(response?.data);
-        setSelectedMovie(movie);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (!isNew()) {
+      Axios.get(`${baseUrl}/${movieId}`)
+        .then((response) => {
+          const movie = new MovieInfo(response?.data);
+          setSelectedMovie(movie);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }, [baseUrl, movieId]);
 
   return (
