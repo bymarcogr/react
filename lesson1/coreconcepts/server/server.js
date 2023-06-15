@@ -20,36 +20,38 @@ app.get("/*", (req, res, next) => {
     return next();
   }
 
-  // getMovieList("http://localhost:4000/movies", {
-  //   sortBy: "title",
-  //   sortOrder: "asc",
-  //   limit: 20,
-  // })
-  //   .then((movies) => {
-  //     // const reactApp = ReactDOMServer.renderToString(
-  //     //   React.createElement(<App serverData={movies}></App>)
-  //     // );
+  getMovieList("http://localhost:4000/movies", {
+    sortBy: "title",
+    sortOrder: "asc",
+    limit: 20,
+  })
+    .then((movies) => {
+      const reactApp = ReactDOMServer.renderToString(
+        React.createElement(App, { movies: movies })
+      );
 
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
+      const indexFile = path.resolve("build/index.html");
+      fs.readFile(indexFile, "utf8", (err, data) => {
+        if (err) {
+          const errMsg = `There is an error: ${err}`;
+          console.error(errMsg);
+          return res.status(500).send(errMsg);
+        }
 
-  const reactApp = ReactDOMServer.renderToString(React.createElement(App));
-  //console.log(reactApp);
-
-  const indexFile = path.resolve("build/index.html");
-  fs.readFile(indexFile, "utf8", (err, data) => {
-    if (err) {
-      const errMsg = `There is an error: ${err}`;
-      console.error(errMsg);
-      return res.status(500).send(errMsg);
-    }
-
-    return res.send(
-      data.replace('<div id="root"></div>', `<div id="root">${reactApp}</div>`)
-    );
-  });
+        return res.send(
+          data.replace(
+            '<div id="root"></div>',
+            `<div id="root">${reactApp}</div>`
+          )
+        );
+      });
+      // const reactApp = ReactDOMServer.renderToString(
+      //   React.createElement(<App serverData={movies}></App>)
+      // );
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 
 app.use(express.static(path.resolve(__dirname, "../build")));

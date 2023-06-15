@@ -12,10 +12,10 @@ const contextValue = {
 
 React.useLayoutEffect = React.useEffect;
 
-export default function App() {
+export default function App({ movies }) {
   return (
     <AppContext.Provider value={contextValue}>
-      <MemoryRouter>{AppRoutes}</MemoryRouter>
+      <MemoryRouter>{AppRoutes(movies)}</MemoryRouter>
     </AppContext.Provider>
   );
 }

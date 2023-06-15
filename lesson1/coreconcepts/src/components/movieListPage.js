@@ -13,10 +13,10 @@ import { useAppContext } from "./appContext";
 
 import { GenreListDefault } from "../models/genreListDefault";
 
-export default function MovieListPage() {
+export default function MovieListPage({ movies }) {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
-  const [moviesList, setMoviesList] = useState();
+  const [moviesList, setMoviesList] = useState(movies ?? null);
   const { config } = useAppContext();
   const baseUrl = config.url;
 

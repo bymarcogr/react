@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 
-const root = ReactDOM.hydrateRoot(
+ReactDOM.hydrateRoot(
   document.getElementById("root"),
   <React.StrictMode>
     <App />
