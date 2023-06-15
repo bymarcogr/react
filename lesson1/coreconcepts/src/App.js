@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { AppRoutes } from "./routes";
 
 import AppContext from "./components/appContext";
@@ -10,10 +10,12 @@ const contextValue = {
   },
 };
 
+React.useLayoutEffect = React.useEffect;
+
 export default function App() {
   return (
     <AppContext.Provider value={contextValue}>
-      <BrowserRouter>{AppRoutes}</BrowserRouter>
+      <MemoryRouter>{AppRoutes}</MemoryRouter>
     </AppContext.Provider>
   );
 }

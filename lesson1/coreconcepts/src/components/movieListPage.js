@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import {
   useSearchParams,
   Outlet,
@@ -8,18 +8,17 @@ import {
 import MovieTile from "./movieTile";
 import SortMovies from "./sortMovies";
 import GenreSelector from "./genreSelector";
-import { MovieInfo } from "../models/movieInfo";
+import { getMovieList } from "../services/api";
 import { useAppContext } from "./appContext";
 
 import { GenreListDefault } from "../models/genreListDefault";
-import Axios from "axios";
 
 export default function MovieListPage() {
-  const { config } = useAppContext();
-  const baseUrl = config.url;
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
-  const [moviesList, setMoviesList] = useState([]);
+  const [moviesList, setMoviesList] = useState();
+  const { config } = useAppContext();
+  const baseUrl = config.url;
 
   const [searchString, setSearchString] = useState(
     searchParams.get("searchBy") === "title" ? searchParams.get("search") : ""
@@ -84,13 +83,9 @@ export default function MovieListPage() {
   };
 
   useEffect(() => {
-    Axios.get(baseUrl, {
-      params: axiosParams(),
-    })
-      .then((response) => {
-        let movies = [];
-        movies = response?.data?.data.map((movie) => new MovieInfo(movie));
-        setMoviesList([...movies]);
+    getMovieList(baseUrl, axiosParams())
+      .then((movies) => {
+        setMoviesList(movies);
       })
       .catch((error) => {
         console.log(error);

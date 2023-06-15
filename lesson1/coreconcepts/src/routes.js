@@ -11,7 +11,7 @@ import DeleteMovieForm from "./components/deleteMovieForm";
 export const AppRoutes = (
   <div>
     <Routes>
-      <Route path="" element={<MovieListPage />}>
+      <Route exact path="" element={<MovieListPage />}>
         <Route path=":movieId" element={<MovieDetailsWrapper />} />
         <Route path="" element={<SearcherWrapper />}>
           <Route path="/new" element={<AddMovieForm isOpen={true} />} />
